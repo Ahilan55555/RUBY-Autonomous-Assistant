@@ -7,7 +7,7 @@ def register_capability(
 
     target=None
 ):
-
+    
     if intent not in capabilities:
 
         capabilities[intent] = []

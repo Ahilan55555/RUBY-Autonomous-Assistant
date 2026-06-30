@@ -1,20 +1,16 @@
 from modules.vision.window_capture import (
-    capture_window
+    capture_active_window
 )
 
 from modules.vision.ocr import (
     get_visible_texts
 )
 
-capture_window(
-    "Firefox",
-    "temp/test.png"
-)
+capture_active_window()
 
 texts = get_visible_texts(
-    "temp/test.png"
+    "temp/active_window.png"
 )
 
 for text in texts:
-
-    print(text)
+    print(repr(text))

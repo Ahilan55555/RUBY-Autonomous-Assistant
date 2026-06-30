@@ -1,8 +1,3 @@
-from modules.vision.ocr import (
-    contains_text
-)
-
-
 class VerificationAgent:
 
     def text_exists(
@@ -21,6 +16,7 @@ class VerificationAgent:
 
         return False
 
+
     def verify(
         self,
         expected_text,
@@ -33,3 +29,15 @@ class VerificationAgent:
                 visible_texts
             )
         }
+
+
+    def missing_text(
+        self,
+        expected_text,
+        visible_texts
+    ):
+
+        return not self.text_exists(
+            expected_text,
+            visible_texts
+        )

@@ -1475,5 +1475,940 @@
         "result": {
             "success": true
         }
+    },
+    {
+        "timestamp": "2026-06-16 21:48:51.380559",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-16 21:49:21.211766",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-16 21:49:26.201545",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "query": "robotics"
+        }
+    },
+    {
+        "timestamp": "2026-06-16 21:49:45.403186",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-16 21:49:50.423326",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "query": "robotics"
+        }
+    },
+    {
+        "timestamp": "2026-06-16 21:49:58.323541",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "query": "robotics"
+        }
+    },
+    {
+        "timestamp": "2026-06-19 20:51:05.789897",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-19 21:11:23.818945",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-19 21:14:53.750355",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: window -> focus"
+        }
+    },
+    {
+        "timestamp": "2026-06-19 21:14:55.910009",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> type_at_text"
+        }
+    },
+    {
+        "timestamp": "2026-06-19 21:14:57.368937",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: keyboard -> enter"
+        }
+    },
+    {
+        "timestamp": "2026-06-19 21:15:06.424055",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: window -> focus"
+        }
+    },
+    {
+        "timestamp": "2026-06-19 21:15:08.478498",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> type_at_text"
+        }
+    },
+    {
+        "timestamp": "2026-06-19 21:15:09.958518",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: keyboard -> enter"
+        }
+    },
+    {
+        "timestamp": "2026-06-19 21:15:18.735877",
+        "task": {
+            "intent": "open_app",
+            "target": "firefox",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_app -> firefox"
+        }
+    },
+    {
+        "timestamp": "2026-06-19 21:15:20.849795",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> type_at_text"
+        }
+    },
+    {
+        "timestamp": "2026-06-20 20:08:03.986582",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 20:44:51.701578",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:02:33.288473",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: window -> focus"
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:02:35.485311",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> type_at_text"
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:02:36.698521",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: keyboard -> enter"
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:14:55.134909",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: window -> focus"
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:14:57.273883",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> type_at_text"
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:14:58.463251",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: keyboard -> enter"
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:26:18.079864",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:26:22.020524",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:26:22.777749",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:03.745245",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:06.953871",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:07.430675",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:11.616991",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:14.785758",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:15.274766",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:19.455336",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:22.611540",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:23.072622",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:41.048281",
+        "task": {
+            "intent": "open_app",
+            "target": "firefox",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:43.561003",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:43.965610",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:47.656626",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:28:50.978181",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:29:07.738772",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:29:12.444476",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-20 21:29:13.651387",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:51:49.878426",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:51:56.208393",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:51:57.684498",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:52:30.523808",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:52:36.834132",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:52:38.392498",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:53:07.396646",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:53:11.617245",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:53:12.405767",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:53:27.916018",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:53:32.287659",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|What is robotics?"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:53:33.065396",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 12:53:56.096874",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 20:15:32.123109",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-21 20:37:05.811475",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "Askk"
+        },
+        "result": {
+            "success": false
+        }
+    },
+    {
+        "timestamp": "2026-06-21 20:37:19.926111",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "Askk"
+        },
+        "result": {
+            "success": true,
+            "x": 361,
+            "y": 453
+        }
+    },
+    {
+        "timestamp": "2026-06-22 20:46:47.011475",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "Askk"
+        },
+        "result": {
+            "success": false
+        }
+    },
+    {
+        "timestamp": "2026-06-22 20:47:00.704126",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "Askk"
+        },
+        "result": {
+            "success": true,
+            "x": 343,
+            "y": 451
+        }
+    },
+    {
+        "timestamp": "2026-06-22 20:50:04.789041",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "ZZZZZZZZZ"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> click_text"
+        }
+    },
+    {
+        "timestamp": "2026-06-22 20:50:16.548230",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "ZZZZZZZZZ"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> click_text"
+        }
+    },
+    {
+        "timestamp": "2026-06-22 20:50:28.286985",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "ZZZZZZZZZ"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> click_text"
+        }
+    },
+    {
+        "timestamp": "2026-06-22 20:54:46.786106",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": true,
+            "query": "hi"
+        }
+    },
+    {
+        "timestamp": "2026-06-22 20:55:13.284001",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": true,
+            "query": "hi"
+        }
+    },
+    {
+        "timestamp": "2026-06-22 21:08:35.996426",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: window -> focus"
+        }
+    },
+    {
+        "timestamp": "2026-06-22 21:14:46.850934",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: window -> focus"
+        }
+    },
+    {
+        "timestamp": "2026-06-22 21:17:56.645993",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: window -> focus"
+        }
+    },
+    {
+        "timestamp": "2026-06-22 21:21:24.660610",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-22 21:22:44.453693",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-22 21:22:52.697059",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-23 20:10:25.966666",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-23 20:10:56.179238",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-23 20:20:31.578655",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-23 20:20:45.065523",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-25 19:48:50.717061",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-06-25 19:48:55.536617",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "query": "robotics"
+        }
+    },
+    {
+        "timestamp": "2026-06-25 19:49:26.146752",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "query": "robotics"
+        }
+    },
+    {
+        "timestamp": "2026-06-25 19:49:42.450070",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "query": "robotics"
+        }
+    },
+    {
+        "timestamp": "2026-06-26 11:51:28.601832",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robot"
+        },
+        "result": {
+            "success": true,
+            "query": "robot"
+        }
     }
 ]

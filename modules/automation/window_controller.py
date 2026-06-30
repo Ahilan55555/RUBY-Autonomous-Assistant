@@ -86,21 +86,6 @@ def _find_window_id(title):
 
     return None
 
-def get_active_window_id():
-
-    result = subprocess.run(
-        [
-            "xdotool",
-            "getactivewindow"
-        ],
-        capture_output=True,
-        text=True
-    )
-
-    return {
-        "success": True,
-        "window_id": result.stdout.strip()
-    }
 
 def minimize_window(title):
 
@@ -233,11 +218,18 @@ def get_active_window_id():
         text=True
     )
 
+    window_id = result.stdout.strip()
+
+    if not window_id:
+
+        return {
+            "success": False
+        }
+
     return {
         "success": True,
-        "window_id": result.stdout.strip()
+        "window_id": window_id
     }
-
 
 def get_window_rect_by_id(
     window_id
@@ -257,42 +249,47 @@ def get_window_rect_by_id(
 
     try:
 
-        position_line = [
-            line
-            for line in output.splitlines()
-            if "Position:" in line
-        ][0]
+        x = y = width = height = 0
 
-        geometry_line = [
-            line
-            for line in output.splitlines()
-            if "Geometry:" in line
-        ][0]
+        for line in output.splitlines():
 
-        pos = (
-            position_line
-            .split("Position:")[1]
-            .strip()
-            .split(",")
-        )
+            if "Position:" in line:
 
-        geo = (
-            geometry_line
-            .split("Geometry:")[1]
-            .strip()
-            .split("x")
-        )
+                position = (
+                    line.split(":")[1]
+                    .strip()
+                )
+
+                coords = (
+                    position.split(" ")[0]
+                    .split(",")
+                )
+
+                x = int(coords[0])
+                y = int(coords[1])
+
+            elif "Geometry:" in line:
+
+                geo = (
+                    line.split(":")[1]
+                    .strip()
+                    .split("x")
+                )
+
+                width = int(geo[0])
+                height = int(geo[1])
 
         return {
             "success": True,
-            "x": int(pos[0]),
-            "y": int(pos[1]),
-            "width": int(geo[0]),
-            "height": int(geo[1])
+            "x": x,
+            "y": y,
+            "width": width,
+            "height": height
         }
 
-    except Exception:
+    except Exception as e:
 
         return {
-            "success": False
+            "success": False,
+            "error": str(e)
         }

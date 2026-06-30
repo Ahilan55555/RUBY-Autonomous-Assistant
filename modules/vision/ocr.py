@@ -90,3 +90,30 @@ def get_visible_texts(
 
         if box["text"].strip()
     ]
+
+def get_visible_texts(image_path):
+
+    boxes = read_screen_boxes(
+        image_path
+    )
+
+    return [
+        box["text"]
+        for box in boxes
+        if box["text"].strip()
+    ]
+
+def find_similar_text(
+    expected_text,
+    visible_texts
+):
+
+    expected = expected_text.lower()
+
+    for text in visible_texts:
+
+        if expected in text.lower():
+
+            return text
+
+    return None

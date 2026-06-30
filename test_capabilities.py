@@ -1,3 +1,5 @@
+# test_capabilities.py
+
 import core.register_capabilities
 
 from core.capability_registry import (

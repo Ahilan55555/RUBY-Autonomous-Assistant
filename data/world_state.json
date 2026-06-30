@@ -1,15 +1,16 @@
 {
     "last_terminal_command": "pwd",
     "last_task": {
-        "intent": "keyboard",
-        "target": "enter",
-        "query": ""
+        "intent": "google_search",
+        "target": "",
+        "query": "robot"
     },
     "last_result": {
-        "success": true
+        "success": true,
+        "query": "robot"
     },
     "active_app": "firefox",
-    "last_search": "funny jokes",
-    "current_website": "github",
+    "last_search": "robot",
+    "current_website": "youtube",
     "last_file_operation": "list"
 }

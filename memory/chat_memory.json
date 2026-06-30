@@ -1,16 +1,19 @@
 {
     "messages": [
-        "User: game",
-        "Assistant: What word do you associate with \"game\"?",
-        "Assistant: Hello. Let's continue our word association game if you'd like. What word do you want to start with?",
-        "Assistant: Hello. Ready to play another round of word association?",
-        "User: no",
-        "Assistant: Alright, let's move on then. Is there anything specific you'd like to chat about or any questions you have?",
-        "User: nope",
-        "Assistant: Alright, if you're not interested in chatting or answering questions right now, that's okay. Feel free to reach out if you need anything in the future!",
-        "User: tell me what r u seeing in my screen",
-        "Assistant: I'm not able to see your screen. How can I assist you further?",
-        "User: u have that ability u know try to use it",
-        "Assistant: I'm sorry, but I don't have the ability to view or access your screen. How can I assist you further?"
+        "Assistant: I'm sorry, but I don't have the ability to view or access your screen. How can I assist you further?",
+        "Assistant: Hello. Is there anything specific you'd like to discuss or ask about?",
+        "User: just testing",
+        "Assistant: Got it. How can I help you with your test?",
+        "Assistant: Hello! How can I assist you today?",
+        "Assistant: Hello! How can I assist you today?",
+        "User: how r u",
+        "Assistant: I'm doing well, thank you. How about you?",
+        "Assistant: Hi there! How can I help you today?",
+        "User: osearch hi",
+        "Assistant: Hello! How can I assist you?",
+        "Assistant: Hello! How can I assist you today?",
+        "Assistant: Hello! How can I assist you today?",
+        "User: robot",
+        "Assistant: I'm an AI assistant, not a physical robot. How can I help you today?"
     ]
 }

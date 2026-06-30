@@ -1,0 +1,11 @@
+{
+    "chatgpt": {
+        "textbox": {
+            "text": "self._loop.run_until_complete(task)",
+            "x": 154,
+            "y": 152,
+            "w": 417,
+            "h": 22
+        }
+    }
+}

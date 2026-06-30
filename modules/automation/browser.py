@@ -30,3 +30,13 @@ def open_google():
 
         "success": True
     }
+
+def open_chatgpt():
+
+    webbrowser.open(
+        "https://chatgpt.com"
+    )
+
+    return {
+        "success": True
+    }

@@ -24,6 +24,11 @@ from core.capability_registry import (
 
     has_capability
 )
+
+from core.capability_registry import (
+    capabilities
+)
+
 from modules.actions.file_actions import (
     create_file
 )
@@ -87,6 +92,12 @@ from modules.automation.window_controller import (
     get_active_window
 )
 
+from modules.agents.browser_agent import (
+    BrowserAgent
+)
+
+browser = BrowserAgent()
+
 def execute_intent(task):
 
     start_time = time.time()
@@ -101,7 +112,29 @@ def execute_intent(task):
     # ---------------------------------
     # CAPABILITY CHECK
     # ---------------------------------
+    print(
+        "CAPABILITY CHECK:",
+        intent,
+        target
+    )
 
+    print(
+        "CAPABILITIES ID:",
+        id(capabilities)
+    )
+
+    print(
+        "CAPABILITIES:",
+        capabilities
+    )
+
+    print(
+        "HAS:",
+        has_capability(
+            intent,
+            target
+        )
+    )
     if not has_capability(
 
         intent,
@@ -478,12 +511,9 @@ def execute_intent(task):
 
         elif intent == "google_search":
 
-            agent = ResearchAgent()
-
-            result = agent.search_topic(
+            result = browser.search_google(
                 query
             )
-
             print(result)
 
             update_state(

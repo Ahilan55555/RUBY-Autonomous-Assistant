@@ -11,7 +11,8 @@ from modules.vision.screen_capture import (
 )
 
 from modules.vision.window_capture import (
-    capture_window
+    capture_window,
+    capture_window_by_id
 )
 
 from modules.vision.ocr import (
@@ -23,8 +24,17 @@ from modules.agents.verification_agent import (
 )
 
 from modules.vision.window_observer import (
-    observe_window
+    observe_window,
+    observe_active_window,
+    observe_window_boxes_by_id
 )
+
+from modules.automation.window_controller import (
+    get_active_window_id
+)
+
+import time
+
 
 class DesktopAgent:
 
@@ -34,20 +44,11 @@ class DesktopAgent:
 
         self.verifier = VerificationAgent()
 
+        self.target_window_id = None
+
     def observe(self):
 
-        result = capture_window(
-            "Firefox",
-            "temp/observe.png"
-        )
-
-        if not result["success"]:
-
-            return ""
-
-        return read_screen_text(
-            result["path"]
-        )
+        return observe_active_window()
 
     def run(self, goal):
 
@@ -78,6 +79,19 @@ class DesktopAgent:
                     "query": task.query
                 }
             )
+            if (
+                task.intent == "window"
+                and
+                task.target == "focus"
+            ):
+                self.lock_active_window()
+
+            if (
+                task.intent == "open_app"
+                and
+                task.target == "firefox"
+            ):
+                self.lock_active_window()
 
             print(
                 "\n===== RESULT ====="
@@ -95,7 +109,9 @@ class DesktopAgent:
                 result
             )
 
-            screen_text = self.observe()
+            screen_text = (
+                self.observe_locked_window()
+            )
 
             print(
                 "\n===== OBSERVATION ====="
@@ -113,39 +129,93 @@ class DesktopAgent:
 
     def verify_text(
         self,
-        expected_text
+        expected_text,
+        timeout=10
     ):
 
-        texts = self.observe_window(
-            "Firefox"
-        )
+        import time
 
-        return self.verifier.text_exists(
-            expected_text,
-            texts
-        )
-        
+        for _ in range(timeout):
+
+            visible = (
+                self.observe_locked_window_boxes()
+            )
+
+            if self.verifier.text_exists(
+                expected_text,
+                visible
+            ):
+                return True
+
+            time.sleep(1)
+
+        return False
+            
     def run_and_verify(
         self,
         goal,
         expected_text
     ):
 
-        results = self.run(
-            goal
+        results = self.run(goal)
+
+        execution_success = all(
+            result.get("success", False)
+            for result in results
         )
 
-        success = self.verify_text(
-            expected_text
+        verification_success = (
+            self.verify_text(
+                expected_text
+            )
         )
 
         return {
-            "success": success,
+            "success":
+                execution_success
+                and
+                verification_success,
+
             "results": results
         }
 
+        
+    def observe_focused_window(
+        self,
+        window_id
+    ):
 
+        result = capture_window_by_id(
+            window_id,
+            "temp/focused_window.png"
+        )
 
+        if not result["success"]:
+            return ""
+
+        return read_screen_text(
+            result["path"]
+        )
+
+    def lock_active_window(self):
+
+        time.sleep(1)
+
+        result = get_active_window_id()
+
+        if result["success"]:
+
+            self.target_window_id = (
+                result["window_id"]
+            )
+
+            print(
+                "LOCKED:",
+                self.target_window_id
+            )
+
+        return result
+        
     def observe_window(
         self,
         title
@@ -153,4 +223,60 @@ class DesktopAgent:
 
         return observe_window(
             title
+            )
+
+
+    def observe_locked_window(self):
+
+        if not self.target_window_id:
+
+            return ""
+
+        result = capture_window_by_id(
+            self.target_window_id,
+            "temp/locked_window.png"
         )
+
+        if not result["success"]:
+
+            return ""
+
+        return read_screen_text(
+            result["path"]
+        )
+
+    def observe_locked_window_boxes(
+        self
+    ):
+
+        if not self.target_window_id:
+
+            return []
+
+        return observe_window_boxes_by_id(
+            self.target_window_id
+        )
+
+    def observe_locked_window_objects(
+        self
+    ):
+
+        return self.observe_locked_window_boxes()
+
+
+    def focus_and_lock_window(
+        self,
+        title
+    ):
+
+        execute_intent(
+            {
+                "intent": "window",
+                "target": "focus",
+                "query": title
+            }
+        )
+
+        time.sleep(1)
+
+        return self.lock_active_window()

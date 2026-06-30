@@ -16,7 +16,17 @@ from modules.vision.screen_capture import (
 from modules.vision.ocr import (
     read_screen_boxes
 )
+
 import time
+
+from modules.vision.window_capture import (
+    capture_window_by_id
+)
+
+from modules.automation.window_controller import (
+    get_active_window_id
+)
+
 
 def find_all_text(text, image_path):
 
@@ -68,25 +78,54 @@ def find_text(text, image_path):
 
 
 
-def click_text(text):
+def click_text(
+    text,
+    window_id=None
+):
 
-    image_path = screenshot()
+    print("CLICK START")
+
+    shot = screenshot(
+        window_id
+    )
+
+    if shot is None:
+        return {
+            "success": False
+        }
+
+    image_path = shot["path"]
 
     result = find_text(
         text,
         image_path
     )
 
-    if not result["success"]:
+    print("OCR DONE")
 
+    if not result["success"]:
         return result
 
+    print("MOVE")
+
+    screen_x = result["x"]
+    screen_y = result["y"]
+
+    if window_id is not None:
+
+        screen_x += shot["x"]
+        screen_y += shot["y"]
+
     move_mouse(
-        result["x"],
-        result["y"]
+        screen_x,
+        screen_y
     )
 
+    print("CLICK")
+
     left_click()
+
+    print("CLICK FINISHED")
 
     return {
         "success": True,
@@ -94,17 +133,25 @@ def click_text(text):
         "y": result["y"]
     }
 
-def screenshot():
+def screenshot(window_id=None):
 
-    result = capture_screen(
-        "temp/screenshot.png"
-    )
+    if window_id is None:
+
+        result = capture_screen(
+            "temp/screenshot.png"
+        )
+
+    else:
+
+        result = capture_window_by_id(
+            window_id,
+            "temp/window_screenshot.png"
+        )
 
     if not result["success"]:
         return None
 
-    return result["path"]
-
+    return result
 
 def double_click_text(text):
 
@@ -155,21 +202,31 @@ def right_click_text(text):
 
 def type_at_text(
     text_to_find,
-    text_to_type
+    text_to_type,
+    window_id=None
 ):
 
+    print("A", get_active_window_id())
+
     result = click_text(
-        text_to_find
+        text_to_find,
+        window_id
     )
+
+    print("B", get_active_window_id())
 
     if not result["success"]:
         return result
 
     time.sleep(0.4)
 
+    print("C", get_active_window_id())
+
     type_text(
         text_to_type
     )
+
+    print("D", get_active_window_id())
 
     return {
         "success": True

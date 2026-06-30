@@ -1,7 +1,14 @@
 from core.capability_registry import (
     register_capability
 )
+from core.capability_registry import (
+    capabilities
+)
 
+print(
+    "REGISTER ID:",
+    id(capabilities)
+)
 # Apps
 register_capability(
     "open_app",
@@ -117,4 +124,18 @@ register_capability(
 register_capability(
     "screen",
     "type_at_text"
+)
+register_capability(
+    "browser",
+    "search_google"
+)
+
+register_capability(
+    "browser",
+    "search_youtube"
+)
+
+register_capability(
+    "browser",
+    "ask_chatgpt"
 )
