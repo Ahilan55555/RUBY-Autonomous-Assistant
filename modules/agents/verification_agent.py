@@ -41,3 +41,69 @@ class VerificationAgent:
             expected_text,
             visible_texts
         )
+
+
+    def verify_focus(
+        self,
+        element
+    ):
+
+        if element is None:
+            return False
+
+        states = " ".join(
+            element.get(
+                "states",
+                []
+            )
+        ).lower()
+
+        return "focused" in states
+
+
+    def verify_exists(
+        self,
+        element
+    ):
+
+        return element is not None
+
+
+    def verify_enabled(
+        self,
+        element
+    ):
+
+        if element is None:
+            return False
+
+        states = " ".join(
+            element.get(
+                "states",
+                []
+            )
+        ).lower()
+
+        return "enabled" in states
+
+
+    def verify_visible(
+        self,
+        element
+    ):
+
+        if element is None:
+            return False
+
+        states = " ".join(
+            element.get(
+                "states",
+                []
+            )
+        ).lower()
+
+        return (
+            "visible" in states
+            and
+            "showing" in states
+        )

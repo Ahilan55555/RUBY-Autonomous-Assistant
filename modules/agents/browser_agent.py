@@ -4,25 +4,37 @@ from modules.automation.browser import (
     open_chatgpt
 )
 
-from modules.automation.screen_actions import (
-    type_at_text
-)
-
-from modules.automation.keyboard_controller import (
-    press_key
-)
-
 from modules.automation.window_session import (
     focus_and_lock
 )
 
-import time
-
-from modules.automation.window_controller import (
-    get_active_window_id
+from modules.agents.ui_agent import (
+    UIAgent
 )
 
+from core.action import (
+    Action
+)
+
+from core.action_queue import (
+    ActionQueue
+)
+
+from core.executor import (
+    Executor
+)
+
+
 class BrowserAgent:
+
+    def __init__(
+        self
+    ):
+
+        self.ui = UIAgent()
+
+        self.executor = Executor()
+
 
     def search_google(
         self,
@@ -38,7 +50,9 @@ class BrowserAgent:
 
         open_google()
 
-        time.sleep(3)
+        self.ui.wait(
+            3
+        )
 
         lock = focus_and_lock(
             "Firefox"
@@ -47,22 +61,54 @@ class BrowserAgent:
         if not lock["success"]:
             return lock
 
-        window_id = lock["window_id"]
+        textbox = self.ui.find_best(
+            app="Firefox",
+            role="text_input"
+        )
 
-        result = type_at_text(
-            "Search",
-            query,
-            window_id
+        if textbox is None:
+
+            return {
+                "success": False,
+                "error": "Google search textbox not found"
+            }
+
+        queue = ActionQueue()
+
+        queue.add(
+            Action(
+                action="click",
+                target=textbox
+            )
+        )
+
+        queue.add(
+            Action(
+                action="type",
+                text=query
+            )
+        )
+
+        queue.add(
+            Action(
+                action="wait",
+                seconds=0.5
+            )
+        )
+
+        queue.add(
+            Action(
+                action="press",
+                key="enter"
+            )
+        )
+
+        result = self.executor.execute_queue(
+            queue
         )
 
         if not result["success"]:
             return result
-
-        time.sleep(0.5)
-
-        press_key(
-            "enter"
-        )
 
         return {
             "success": True,
@@ -70,94 +116,83 @@ class BrowserAgent:
         }
 
 
-    def search_google(
+    def search_youtube(
         self,
         query
     ):
 
-        print("\nSTEP 1: Focus Firefox")
-
         lock = focus_and_lock(
             "Firefox"
-        )
-
-        print(lock)
-
-        if not lock["success"]:
-            return lock
-
-        print(
-            "ACTIVE:",
-            get_active_window_id()
-        )
-
-        print("\nSTEP 2: Open Google")
-
-        open_google()
-
-        time.sleep(3)
-
-        print(
-            "ACTIVE:",
-            get_active_window_id()
-        )
-
-        print("\nSTEP 3: Lock Again")
-
-        lock = focus_and_lock(
-            "Firefox"
-        )
-
-        print(lock)
-
-        print(
-            "ACTIVE:",
-            get_active_window_id()
         )
 
         if not lock["success"]:
             return lock
 
-        window_id = lock["window_id"]
+        open_youtube()
 
-        print("\nSTEP 4: Click Search")
-
-        result = type_at_text(
-            "Search",
-            query,
-            window_id
+        self.ui.wait(
+            3
         )
 
-        print(result)
+        lock = focus_and_lock(
+            "Firefox"
+        )
 
-        print(
-            "ACTIVE:",
-            get_active_window_id()
+        if not lock["success"]:
+            return lock
+
+        textbox = self.ui.find_best(
+            app="Firefox",
+            role="text_input"
+        )
+
+        if textbox is None:
+
+            return {
+                "success": False,
+                "error": "YouTube search textbox not found"
+            }
+
+        queue = ActionQueue()
+
+        queue.add(
+            Action(
+                action="click",
+                target=textbox
+            )
+        )
+
+        queue.add(
+            Action(
+                action="type",
+                text=query
+            )
+        )
+
+        queue.add(
+            Action(
+                action="wait",
+                seconds=0.5
+            )
+        )
+
+        queue.add(
+            Action(
+                action="press",
+                key="enter"
+            )
+        )
+
+        result = self.executor.execute_queue(
+            queue
         )
 
         if not result["success"]:
             return result
 
-        print("\nSTEP 5: Wait")
-
-        time.sleep(2)
-
-        print(
-            "ACTIVE:",
-            get_active_window_id()
-        )
-
-        print("\nSTEP 6: Press Enter")
-
-        press_key("enter")
-
-        print(
-            "ACTIVE:",
-            get_active_window_id()
-        )
-
         return {
-            "success": True
+            "success": True,
+            "query": query
         }
 
 
@@ -175,7 +210,9 @@ class BrowserAgent:
 
         open_chatgpt()
 
-        time.sleep(5)
+        self.ui.wait(
+            5
+        )
 
         lock = focus_and_lock(
             "Firefox"
@@ -184,24 +221,92 @@ class BrowserAgent:
         if not lock["success"]:
             return lock
 
-        window_id = lock["window_id"]
+        textbox = self.ui.find_best(
+            app="Firefox",
+            role="text_input"
+        )
 
-        result = type_at_text(
-            "Ask anything",
-            prompt,
-            window_id
+        if textbox is None:
+
+            return {
+                "success": False,
+                "error": "ChatGPT textbox not found"
+            }
+
+        queue = ActionQueue()
+
+        queue.add(
+            Action(
+                action="click",
+                target=textbox
+            )
+        )
+
+        queue.add(
+            Action(
+                action="type",
+                text=prompt
+            )
+        )
+
+        queue.add(
+            Action(
+                action="wait",
+                seconds=0.5
+            )
+        )
+
+        queue.add(
+            Action(
+                action="press",
+                key="enter"
+            )
+        )
+
+        result = self.executor.execute_queue(
+            queue
         )
 
         if not result["success"]:
             return result
 
-        time.sleep(0.5)
-
-        press_key(
-            "enter"
-        )
-
         return {
             "success": True,
             "prompt": prompt
+        }
+
+
+    def execute_goal(
+        self,
+        goal
+    ):
+
+        if goal.action == "search":
+
+            if goal.target == "google":
+
+                return self.search_google(
+                    goal.data
+                )
+
+            if goal.target == "youtube":
+
+                return self.search_youtube(
+                    goal.data
+                )
+
+        if goal.action == "ask":
+
+            if goal.target == "chatgpt":
+
+                return self.ask_chatgpt(
+                    goal.data
+                )
+
+        return {
+
+            "success": False,
+
+            "error": f"Unknown goal: {goal}"
+
         }

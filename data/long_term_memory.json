@@ -1,6 +1,6 @@
 {
     "favorite_topic": "robotics",
-    "last_command": "robot",
+    "last_command": "ok now open youtube and search eobotics and play the first video",
     "command_usage": {
         "open firefox": 9,
         "open github": 11,
@@ -24,7 +24,7 @@
         "currentdirectory": 1,
         ">>> current directory": 2,
         "what is robotics": 7,
-        "hi": 84,
+        "hi": 85,
         "u r too slow": 1,
         "how r u": 7,
         "now u r now ur speed some what decent not too slow": 1,
@@ -267,6 +267,9 @@
         "search hi": 2,
         "can u open youtube and search robotics": 1,
         "search robot": 1,
-        "robot": 1
+        "robot": 1,
+        "not much can u open google": 1,
+        "atleast con u open youtube": 1,
+        "ok now open youtube and search eobotics and play the first video": 1
     }
 }

@@ -1,37 +1,47 @@
-from modules.automation.accessibility import (
-    find_first_editable_entry,
-    find_all_buttons,
-    find_all_links,
-    find_by_name
-)
+
 from modules.automation.mouse_controller import (
     move_mouse,
-    left_click
+    left_click,
+    right_click,
+    double_click
+    
 )
 
 from modules.automation.keyboard_controller import (
-    type_text
+    type_text,
+    press_key
 )
+
+import time
+
 
 from modules.perception.manager import (
     PerceptionManager
+)
+
+from modules.agents.reasoning_agent import (
+    ReasoningAgent
 )
 
 class UIAgent:
 
     def __init__(self):
 
-        self.perception = (
-            PerceptionManager()
-        )
+        self.perception = PerceptionManager()
+
+        self.reasoner = ReasoningAgent()
 
     def find_textbox(
         self,
         app
     ):
 
-        return find_first_editable_entry(
+        elements = self.perception.observe(
             app
+        )
+
+        return self.reasoner.find_best_textbox(
+            elements
         )
 
 
@@ -40,18 +50,19 @@ class UIAgent:
         app
     ):
 
-        return find_all_buttons(
-            app
+        return self.perception.find(
+            app,
+            role="push button"
         )
-
 
     def find_links(
         self,
         app
     ):
 
-        return find_all_links(
-            app
+        return self.perception.find(
+            app,
+            role="link"
         )
 
     def click(
@@ -111,6 +122,24 @@ class UIAgent:
         )
 
 
+
+    def find_best(
+        self,
+        app,
+        role=None,
+        text=None
+    ):
+
+        elements = self.perception.observe(
+            app
+        )
+
+        return self.reasoner.find_best_element(
+            elements,
+            role,
+            text
+        )
+
     def click_and_type(
         self,
         element,
@@ -127,6 +156,114 @@ class UIAgent:
 
         type_text(
             text
+        )
+
+        return {
+            "success": True
+        }
+
+
+    def type(
+        self,
+        text
+    ):
+
+        type_text(
+            text
+        )
+
+        return {
+            "success": True
+        }
+
+
+    def press(
+        self,
+        key
+    ):
+
+        press_key(
+            key
+        )
+
+        return {
+            "success": True
+        }
+
+
+    def wait(
+        self,
+        seconds
+    ):
+
+        time.sleep(
+            seconds
+        )
+
+        return {
+            "success": True
+        }
+
+
+    def double_click(
+        self,
+        element
+    ):
+
+        result = self.click(
+            element
+        )
+
+        if not result["success"]:
+            return result
+
+        double_click()
+
+        return {
+            "success": True
+        }
+
+
+    def right_click(
+        self,
+        element
+    ):
+
+        result = self.click(
+            element
+        )
+
+        if not result["success"]:
+            return result
+
+        right_click()
+
+        return {
+            "success": True
+        }
+
+
+    def hover(
+        self,
+        element
+    ):
+
+        if element is None:
+
+            return {
+                "success": False
+            }
+
+        bounds = element["bounds"]
+
+        move_mouse(
+
+            bounds["x"] +
+            bounds["width"] // 2,
+
+            bounds["y"] +
+            bounds["height"] // 2
+
         )
 
         return {

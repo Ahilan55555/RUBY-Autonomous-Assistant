@@ -1,42 +1,55 @@
-import webbrowser
 from configs.settings import (
     YOUTUBE_URL,
     GITHUB_URL
 )
 
-def open_youtube():
-
-    webbrowser.open(YOUTUBE_URL)
-
-    
-def open_github():
-
-    webbrowser.open(GITHUB_URL)
+from modules.skills.open_url import (
+    open_url
+)
 
 
-def google_search(query):
-
-    url = f"https://www.google.com/search?q={query}"
-
-    webbrowser.open(url)
-    
 def open_google():
 
-    webbrowser.open(
+    return open_url(
+
         "https://www.google.com"
+
     )
 
-    return {
-
-        "success": True
-    }
 
 def open_chatgpt():
 
-    webbrowser.open(
+    return open_url(
+
         "https://chatgpt.com"
+
     )
 
-    return {
-        "success": True
-    }
+
+def open_youtube():
+
+    return open_url(
+
+        YOUTUBE_URL
+
+    )
+
+
+def open_github():
+
+    return open_url(
+
+        GITHUB_URL
+
+    )
+
+
+def google_search(
+    query
+):
+
+    return open_url(
+
+        f"https://www.google.com/search?q={query}"
+
+    )

@@ -2410,5 +2410,62 @@
             "success": true,
             "query": "robot"
         }
+    },
+    {
+        "timestamp": "2026-07-08 20:28:45.870380",
+        "task": {
+            "intent": "open_website",
+            "target": "google",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> google"
+        }
+    },
+    {
+        "timestamp": "2026-07-08 20:29:12.203383",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-08 20:30:03.390625",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-08 20:30:14.097757",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "eobotics"
+        },
+        "result": {
+            "success": true,
+            "query": "eobotics"
+        }
+    },
+    {
+        "timestamp": "2026-07-08 20:30:17.229228",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "first video result"
+        },
+        "result": {
+            "success": false
+        }
     }
 ]

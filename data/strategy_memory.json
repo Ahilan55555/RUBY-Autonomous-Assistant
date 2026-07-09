@@ -8,7 +8,7 @@
         "failure": 1
     },
     "google_search": {
-        "success": 29,
+        "success": 30,
         "failure": 0
     },
     "open_app": {
@@ -32,8 +32,8 @@
         "failure": 1
     },
     "open_website": {
-        "success": 7,
-        "failure": 0
+        "success": 9,
+        "failure": 1
     },
     "say_funny_joke": {
         "success": 0,
@@ -48,7 +48,7 @@
         "failure": 9
     },
     "screen": {
-        "success": 35,
+        "success": 36,
         "failure": 12
     },
     "keyboard": {

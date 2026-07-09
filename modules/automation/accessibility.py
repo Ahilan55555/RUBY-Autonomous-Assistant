@@ -328,3 +328,47 @@ def find_by_name(
         elements,
         text
     )
+
+def find_active_document(
+    application
+):
+
+    elements = get_ui_elements(
+        application
+    )
+
+    # ---------- First preference ----------
+    # Return the focused document
+
+    for element in elements:
+
+        if element["role"] != "document web":
+            continue
+
+        state_text = " ".join(
+            element["states"]
+        ).lower()
+
+        if "focused" in state_text:
+
+            return element["node"]
+
+    # ---------- Second preference ----------
+    # Return a showing document
+
+    for element in elements:
+
+        if element["role"] != "document web":
+            continue
+
+        state_text = " ".join(
+            element["states"]
+        ).lower()
+
+        if "showing" in state_text:
+
+            return element["node"]
+
+    # ---------- Fallback ----------
+
+    return application

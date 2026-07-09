@@ -23,11 +23,19 @@ def load_state():
 
             "active_app": None,
 
+            "active_window": None,
+
             "current_url": None,
+
+            "current_page": None,
 
             "current_directory": None,
 
+            "last_goal": None,
+
             "last_task": None,
+
+            "last_action": None,
 
             "last_result": None,
 
