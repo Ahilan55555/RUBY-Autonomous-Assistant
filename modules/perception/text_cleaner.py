@@ -1,5 +1,31 @@
 class TextCleaner:
 
+    IGNORE = {
+
+        "you said:",
+
+        "chatgpt said:",
+
+        "copy message",
+
+        "edit message",
+
+        "show more",
+
+        "your message actions",
+
+        "open sidebar",
+
+        "model selector",
+
+        "new chat",
+
+        "skip to content",
+
+        "open conversation options"
+
+    }
+
     def clean(
         self,
         lines
@@ -16,18 +42,19 @@ class TextCleaner:
             if not line:
                 continue
 
-            if len(line) < 2:
+            lower = line.lower()
+
+            if lower in self.IGNORE:
                 continue
 
-            if line.lower() in seen:
+            if len(line) < 3:
                 continue
 
-            seen.add(
-                line.lower()
-            )
+            if lower in seen:
+                continue
 
-            cleaned.append(
-                line
-            )
+            seen.add(lower)
+
+            cleaned.append(line)
 
         return cleaned

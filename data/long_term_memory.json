@@ -1,6 +1,6 @@
 {
     "favorite_topic": "robotics",
-    "last_command": "ok now open youtube and search eobotics and play the first video",
+    "last_command": "can u open google and sear ch robo and click the first webasite",
     "command_usage": {
         "open firefox": 9,
         "open github": 11,
@@ -24,7 +24,7 @@
         "currentdirectory": 1,
         ">>> current directory": 2,
         "what is robotics": 7,
-        "hi": 85,
+        "hi": 88,
         "u r too slow": 1,
         "how r u": 7,
         "now u r now ur speed some what decent not too slow": 1,
@@ -270,6 +270,7 @@
         "robot": 1,
         "not much can u open google": 1,
         "atleast con u open youtube": 1,
-        "ok now open youtube and search eobotics and play the first video": 1
+        "ok now open youtube and search eobotics and play the first video": 1,
+        "can u open google and sear ch robo and click the first webasite": 1
     }
 }

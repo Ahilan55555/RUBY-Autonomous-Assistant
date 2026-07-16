@@ -12,17 +12,11 @@ from modules.agents.ui_agent import (
     UIAgent
 )
 
-from core.action import (
-    Action
-)
+from core.task_builder import TaskBuilder
 
-from core.action_queue import (
-    ActionQueue
-)
+from core.plan import Plan
 
-from core.executor import (
-    Executor
-)
+from modules.agents.goal_executor import GoalExecutor
 
 
 class BrowserAgent:
@@ -33,10 +27,11 @@ class BrowserAgent:
 
         self.ui = UIAgent()
 
-        self.executor = Executor()
+        self.task_builder = TaskBuilder()
 
+        self.goal_executor = GoalExecutor()
 
-    def search_google(
+    def search_google_plan(
         self,
         query
     ):
@@ -46,7 +41,7 @@ class BrowserAgent:
         )
 
         if not lock["success"]:
-            return lock
+            return None
 
         open_google()
 
@@ -59,7 +54,7 @@ class BrowserAgent:
         )
 
         if not lock["success"]:
-            return lock
+            return None
 
         textbox = self.ui.find_best(
             app="Firefox",
@@ -67,56 +62,25 @@ class BrowserAgent:
         )
 
         if textbox is None:
+            return None
 
-            return {
-                "success": False,
-                "error": "Google search textbox not found"
-            }
-
-        queue = ActionQueue()
-
-        queue.add(
-            Action(
-                action="click",
-                target=textbox
-            )
+        task = self.task_builder.search(
+            textbox,
+            query
         )
 
-        queue.add(
-            Action(
-                action="type",
-                text=query
-            )
+        plan = Plan(
+            goal="Search Google"
         )
 
-        queue.add(
-            Action(
-                action="wait",
-                seconds=0.5
-            )
+        plan.add_task(
+            task
         )
 
-        queue.add(
-            Action(
-                action="press",
-                key="enter"
-            )
-        )
-
-        result = self.executor.execute_queue(
-            queue
-        )
-
-        if not result["success"]:
-            return result
-
-        return {
-            "success": True,
-            "query": query
-        }
+        return plan
 
 
-    def search_youtube(
+    def search_youtube_plan(
         self,
         query
     ):
@@ -126,7 +90,7 @@ class BrowserAgent:
         )
 
         if not lock["success"]:
-            return lock
+            return None
 
         open_youtube()
 
@@ -139,7 +103,7 @@ class BrowserAgent:
         )
 
         if not lock["success"]:
-            return lock
+            return None
 
         textbox = self.ui.find_best(
             app="Firefox",
@@ -147,56 +111,24 @@ class BrowserAgent:
         )
 
         if textbox is None:
+            return None
 
-            return {
-                "success": False,
-                "error": "YouTube search textbox not found"
-            }
-
-        queue = ActionQueue()
-
-        queue.add(
-            Action(
-                action="click",
-                target=textbox
-            )
+        task = self.task_builder.search(
+            textbox,
+            query
         )
 
-        queue.add(
-            Action(
-                action="type",
-                text=query
-            )
+        plan = Plan(
+            goal="Search YouTube"
         )
 
-        queue.add(
-            Action(
-                action="wait",
-                seconds=0.5
-            )
+        plan.add_task(
+            task
         )
 
-        queue.add(
-            Action(
-                action="press",
-                key="enter"
-            )
-        )
+        return plan
 
-        result = self.executor.execute_queue(
-            queue
-        )
-
-        if not result["success"]:
-            return result
-
-        return {
-            "success": True,
-            "query": query
-        }
-
-
-    def ask_chatgpt(
+    def ask_chatgpt_plan(
         self,
         prompt
     ):
@@ -206,7 +138,7 @@ class BrowserAgent:
         )
 
         if not lock["success"]:
-            return lock
+            return None
 
         open_chatgpt()
 
@@ -219,7 +151,7 @@ class BrowserAgent:
         )
 
         if not lock["success"]:
-            return lock
+            return None
 
         textbox = self.ui.find_best(
             app="Firefox",
@@ -227,53 +159,154 @@ class BrowserAgent:
         )
 
         if textbox is None:
+            return None
+
+        task = self.task_builder.search(
+            textbox,
+            prompt
+        )
+
+        plan = Plan(
+            goal="Ask ChatGPT"
+        )
+
+        plan.add_task(
+            task
+        )
+
+        return plan
+
+
+    def search_google(
+            self,
+            query
+        ):
+
+            plan = self.search_google_plan(
+                query
+            )
+
+            if plan is None:
+
+                return {
+
+                    "success": False,
+
+                    "error": "Could not create plan"
+
+                }
+
+            result = self.goal_executor.run(
+                plan
+            )
+
+            if not result["success"]:
+                return result
 
             return {
+
+                "success": True,
+
+                "query": query
+
+            }    
+
+
+    def search_youtube(
+        self,
+        query
+    ):
+
+        plan = self.search_youtube_plan(
+            query
+        )
+
+        if plan is None:
+
+            return {
+
                 "success": False,
-                "error": "ChatGPT textbox not found"
+
+                "error": "Could not create plan"
+
             }
 
-        queue = ActionQueue()
-
-        queue.add(
-            Action(
-                action="click",
-                target=textbox
-            )
-        )
-
-        queue.add(
-            Action(
-                action="type",
-                text=prompt
-            )
-        )
-
-        queue.add(
-            Action(
-                action="wait",
-                seconds=0.5
-            )
-        )
-
-        queue.add(
-            Action(
-                action="press",
-                key="enter"
-            )
-        )
-
-        result = self.executor.execute_queue(
-            queue
+        result = self.goal_executor.run(
+            plan
         )
 
         if not result["success"]:
             return result
 
         return {
+
             "success": True,
-            "prompt": prompt
+
+            "query": query
+
         }
+
+    def ask_chatgpt(
+        self,
+        prompt
+    ):
+
+        plan = self.ask_chatgpt_plan(
+            prompt
+        )
+
+        if plan is None:
+
+            return {
+
+                "success": False,
+
+                "error": "Could not create plan"
+
+            }
+
+        result = self.goal_executor.run(
+            plan
+        )
+
+        if not result["success"]:
+            return result
+
+        return {
+
+            "success": True,
+
+            "prompt": prompt
+
+        }
+    def goal_to_plan(
+        self,
+        goal
+    ):
+
+        if goal.action == "search":
+
+            if goal.target == "google":
+
+                return self.search_google_plan(
+                    goal.data
+                )
+
+            if goal.target == "youtube":
+
+                return self.search_youtube_plan(
+                    goal.data
+                )
+
+        if goal.action == "ask":
+
+            if goal.target == "chatgpt":
+
+                return self.ask_chatgpt_plan(
+                    goal.data
+                )
+
+        return None
 
 
     def execute_goal(

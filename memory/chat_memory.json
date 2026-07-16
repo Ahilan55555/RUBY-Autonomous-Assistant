@@ -15,6 +15,9 @@
         "Assistant: Hello! How can I assist you today?",
         "User: robot",
         "Assistant: I'm an AI assistant, not a physical robot. How can I help you today?",
+        "Assistant: Hello! How can I assist you today?",
+        "Assistant: Hello! How can I assist you today?",
+        "Assistant: Hello! How can I assist you today?",
         "Assistant: Hello! How can I assist you today?"
     ]
 }

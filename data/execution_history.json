@@ -2467,5 +2467,40 @@
         "result": {
             "success": false
         }
+    },
+    {
+        "timestamp": "2026-07-12 21:23:10.400219",
+        "task": {
+            "intent": "open_website",
+            "target": "google",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> google"
+        }
+    },
+    {
+        "timestamp": "2026-07-12 21:23:21.394385",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robo"
+        },
+        "result": {
+            "success": true,
+            "query": "robo"
+        }
+    },
+    {
+        "timestamp": "2026-07-12 21:23:21.507264",
+        "task": {
+            "intent": "mouse",
+            "target": "click",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
     }
 ]

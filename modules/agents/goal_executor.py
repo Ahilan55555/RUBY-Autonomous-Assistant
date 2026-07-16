@@ -1,12 +1,29 @@
 from core.executor import Executor
-from core.world_state import update_state
 
+from core.world_state import (
+    update_state
+)
+
+from modules.agents.task_observer import (
+    TaskObserver
+)
+
+from modules.agents.decision_engine import (
+    DecisionEngine
+)
 
 class GoalExecutor:
 
-    def __init__(self):
+    def __init__(
+        self
+    ):
 
         self.executor = Executor()
+
+        self.observer = TaskObserver()
+
+        self.decision_engine = DecisionEngine()
+
 
     def run(
         self,
@@ -38,11 +55,45 @@ class GoalExecutor:
 
                 return result
 
+            observation = self.observer.observe(
+                task
+            )
+
+            decision = self.decision_engine.decide(
+
+                task,
+
+                observation
+
+            )
+
+            if decision["action"] != "continue":
+
+                update_state(
+
+                    "last_result",
+
+                    decision["action"]
+
+                )
+
+                return {
+
+                    "success": False,
+
+                    "decision": decision,
+
+                    "observation": observation
+
+                }
+
         update_state(
             "last_result",
             "success"
         )
 
         return {
+
             "success": True
+
         }

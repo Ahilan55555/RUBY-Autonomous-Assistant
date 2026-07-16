@@ -1,16 +1,16 @@
 {
     "last_terminal_command": "pwd",
     "last_task": {
-        "intent": "screen",
-        "target": "click_text",
-        "query": "first video result"
+        "intent": "mouse",
+        "target": "click",
+        "query": ""
     },
     "last_result": {
-        "success": false
+        "success": true
     },
     "active_app": "firefox",
-    "last_search": "eobotics",
+    "last_search": "robo",
     "current_website": "youtube",
     "last_file_operation": "list",
-    "last_goal": "Test"
+    "last_goal": "Search Google"
 }
