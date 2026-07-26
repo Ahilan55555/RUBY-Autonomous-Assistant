@@ -1,4 +1,5 @@
 from core.mission import Mission
+from core.mission_step import MissionStep
 
 
 class MissionBuilder:
@@ -18,54 +19,78 @@ class MissionBuilder:
 
         if "search" in command:
 
-            steps.append({
+            steps.append(
 
-                "action": "search",
+                MissionStep(
 
-                "target": "robotics papers"
+                    action="search",
 
-            })
+                    target="robotics papers"
+
+                )
+
+            )
 
         if "read" in command:
 
-            steps.append({
+            steps.append(
 
-                "action": "read",
+                MissionStep(
 
-                "target": "first_result"
+                    action="read",
 
-            })
+                    target="first_result"
+
+                )
+
+            )
 
         if "summarize" in command:
 
-            steps.append({
+            steps.append(
 
-                "action": "summarize",
+                MissionStep(
 
-                "target": "current_document"
+                    action="summarize",
 
-            })
+                    target="current_document"
+
+                )
+
+            )
 
         if "save" in command:
 
-            steps.append({
+            steps.append(
 
-                "action": "save",
+                MissionStep(
 
-                "target": "summary.pdf"
+                    action="save",
 
-            })
+                    target="summary.pdf"
+
+                )
+
+            )
 
         if "play" in command:
 
-            steps.append({
+            steps.append(
 
-                "action": "play",
+                MissionStep(
 
-                "target": "best_match"
+                    action="play",
 
-            })
+                    target="best_match"
 
-        mission.steps = steps
+                )
+
+            )
+
+        for step in steps:
+
+            mission.add_step(
+                step
+            )
 
         return mission

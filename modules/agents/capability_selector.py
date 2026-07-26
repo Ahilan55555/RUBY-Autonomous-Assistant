@@ -2,11 +2,23 @@ class CapabilitySelector:
 
     def choose(
         self,
-        mission_step,
-        goal_context
+        action,
+        mission
     ):
 
-        if mission_step == "search":
+        if action == "search":
             return "browser.search"
+
+        if action == "read":
+            return "browser.read_page"
+
+        if action == "summarize":
+            return "memory.summarize"
+
+        if action == "save":
+            return "files.save"
+
+        if action == "play":
+            return "browser.play"
 
         return None

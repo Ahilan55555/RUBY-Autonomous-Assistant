@@ -12,6 +12,8 @@ from modules.agents.decision_engine import (
     DecisionEngine
 )
 
+from core.observation import Observation
+
 class GoalExecutor:
 
     def __init__(
@@ -92,8 +94,12 @@ class GoalExecutor:
             "success"
         )
 
+        observation = Observation()
+
         return {
 
-            "success": True
+            "success": True,
+
+            "observation": observation
 
         }

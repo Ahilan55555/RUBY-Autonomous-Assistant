@@ -80,34 +80,28 @@ class Planner:
 
     def build_plan(
         self,
-        mission_step,
-        goal_context
+        step,
+        mission
     ):
 
         capability_name = self.selector.choose(
-
-            mission_step,
-
-            goal_context
-
+            step.action,
+            mission
         )
 
         if capability_name is None:
-
-            return None
+            return None, None
 
         capability = self.registry.get(
-
             capability_name
-
         )
 
         if capability is None:
+            return None, None
 
-            return None
-
-        return capability.build_plan(
-
-            goal_context
-
+        plan = capability.build_plan(
+            step,
+            mission
         )
+
+        return capability, plan

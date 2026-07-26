@@ -2,9 +2,10 @@ from core.plan import Plan
 from core.task_builder import TaskBuilder
 
 from modules.agents.ui_agent import UIAgent
+from modules.capabilities.base import Capability
 
 
-class BrowserSearchCapability:
+class BrowserSearchCapability(Capability):
 
     def __init__(self):
 
@@ -12,27 +13,24 @@ class BrowserSearchCapability:
 
         self.ui = UIAgent()
 
+    def prepare(
+        self,
+        step,
+        mission
+    ):
+
+        mission.context.set(
+            "search_query",
+            step.target
+        )
 
     def build_plan(
         self,
-        goal_context
+        step,
+        mission
     ):
 
-        query = (
-
-            goal_context.command
-
-            .replace(
-
-                "search google",
-
-                ""
-
-            )
-
-            .strip()
-
-        )
+        query = step.target
 
         textbox = self.ui.find_best(
 
@@ -67,3 +65,18 @@ class BrowserSearchCapability:
         )
 
         return plan
+
+    def collect_result(
+        self,
+        mission,
+        observation
+    ):
+
+        return observation
+
+    def cleanup(
+        self,
+        mission
+    ):
+
+        pass

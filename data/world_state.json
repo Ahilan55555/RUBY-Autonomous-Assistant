@@ -1,13 +1,7 @@
 {
     "last_terminal_command": "pwd",
-    "last_task": {
-        "intent": "mouse",
-        "target": "click",
-        "query": ""
-    },
-    "last_result": {
-        "success": true
-    },
+    "last_task": "Search",
+    "last_result": "success",
     "active_app": "firefox",
     "last_search": "robo",
     "current_website": "youtube",
