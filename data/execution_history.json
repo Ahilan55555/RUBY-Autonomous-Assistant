@@ -2502,5 +2502,328 @@
         "result": {
             "success": true
         }
+    },
+    {
+        "timestamp": "2026-07-27 19:01:36.899231",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-27 19:01:52.157959",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": false,
+            "error": "'Observation' object is not subscriptable"
+        }
+    },
+    {
+        "timestamp": "2026-07-27 19:39:25.718134",
+        "task": {
+            "intent": "open_website",
+            "target": "github",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-27 20:59:06.205884",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "'Observation' object is not subscriptable"
+        }
+    },
+    {
+        "timestamp": "2026-07-27 21:09:02.410546",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-27 21:09:13.338374",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "math"
+        },
+        "result": {
+            "success": false,
+            "error": "'Observation' object is not subscriptable"
+        }
+    },
+    {
+        "timestamp": "2026-07-28 18:23:11.522523",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-28 18:23:25.316457",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "query": "robotics"
+        }
+    },
+    {
+        "timestamp": "2026-07-28 18:42:58.461830",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-28 18:43:12.826073",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "query": "robotics"
+        }
+    },
+    {
+        "timestamp": "2026-07-28 18:53:53.880100",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-28 18:54:07.995681",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "query": "robotics"
+        }
+    },
+    {
+        "timestamp": "2026-07-28 21:13:49.416751",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-28 21:13:59.185297",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "query": "robotics"
+        }
+    },
+    {
+        "timestamp": "2026-07-29 21:36:11.541117",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-29 21:36:41.739662",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": true,
+            "query": "hi"
+        }
+    },
+    {
+        "timestamp": "2026-07-30 19:19:44.437307",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": true,
+            "query": "hi"
+        }
+    },
+    {
+        "timestamp": "2026-07-31 21:46:11.452757",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hifiey"
+        },
+        "result": {
+            "success": false,
+            "error": "'Decision' object is not subscriptable"
+        }
+    },
+    {
+        "timestamp": "2026-07-31 21:50:52.826185",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-31 21:50:59.567317",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hifi"
+        },
+        "result": {
+            "success": false,
+            "error": "PyAutoGUI fail-safe triggered from mouse moving to a corner of the screen. To disable this fail-safe, set pyautogui.FAILSAFE to False. DISABLING FAIL-SAFE IS NOT RECOMMENDED."
+        }
+    },
+    {
+        "timestamp": "2026-07-31 21:55:27.403624",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-31 21:55:30.412109",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|out"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-31 21:55:30.516907",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-31 22:00:02.631510",
+        "task": {
+            "intent": "open_website",
+            "target": "google",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> google"
+        }
+    },
+    {
+        "timestamp": "2026-07-31 22:00:14.700678",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hifi"
+        },
+        "result": {
+            "success": false,
+            "error": "'Decision' object is not subscriptable"
+        }
+    },
+    {
+        "timestamp": "2026-07-31 22:00:31.256170",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-07-31 22:01:08.479222",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-31 22:01:12.580888",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
     }
 ]

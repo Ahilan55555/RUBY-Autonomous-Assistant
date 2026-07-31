@@ -1,10 +1,20 @@
 {
-    "last_terminal_command": "pwd",
-    "last_task": "Search",
-    "last_result": "success",
-    "active_app": "firefox",
-    "last_search": "robo",
-    "current_website": "youtube",
-    "last_file_operation": "list",
-    "last_goal": "Search Google"
+    "active_app": null,
+    "active_window": null,
+    "current_url": null,
+    "current_page": null,
+    "current_directory": null,
+    "last_goal": null,
+    "last_task": {
+        "intent": "open_website",
+        "target": "youtube",
+        "query": ""
+    },
+    "last_action": null,
+    "last_result": {
+        "success": true
+    },
+    "screen_context": null,
+    "last_search": "hi",
+    "current_website": "youtube"
 }

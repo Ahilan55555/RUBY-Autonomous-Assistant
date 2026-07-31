@@ -3,11 +3,14 @@ class Task:
     def __init__(
         self,
         name,
+        capability=None,
         action_queue=None,
         parameters=None
     ):
 
         self.name = name
+
+        self.capability = capability
 
         self.action_queue = action_queue
 
@@ -20,6 +23,8 @@ class Task:
             f"Task("
 
             f"name={self.name}, "
+
+            f"capability={self.capability}, "
 
             f"parameters={self.parameters}"
 

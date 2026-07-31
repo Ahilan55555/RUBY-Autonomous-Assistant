@@ -1,18 +1,23 @@
+from core.observation import Observation
+
+from modules.perception.browser_observer import BrowserObserver
+
+
 class TaskObserver:
+
+    def __init__(self):
+
+        self.browser = BrowserObserver()
 
     def observe(
         self,
         task
     ):
 
-        return {
+        task_name = getattr(task, "name", "").lower()
 
-            "success": True,
+        if "browser" in task_name:
 
-            "completed": True,
+            return self.browser.observe()
 
-            "confidence": 1.0,
-
-            "reason": "Task completed."
-
-        }
+        return Observation()

@@ -1,5 +1,6 @@
 from modules.agents.planner import Planner
 from modules.agents.goal_executor import GoalExecutor
+from modules.agents.decision_engine import DecisionEngine
 
 
 class MissionExecutor:
@@ -10,11 +11,13 @@ class MissionExecutor:
 
         self.goal_executor = GoalExecutor()
 
+        self.decision_engine = DecisionEngine()
+
     def run(
         self,
         mission
     ):
-
+        print(">>> MissionExecutor.run() called")
         mission.started()
 
         for step in mission.steps:
@@ -42,20 +45,37 @@ class MissionExecutor:
                 plan
             )
 
-            capability.collect_result(
-                mission,
-                result.get("observation")
-            )
-
-            capability.cleanup(
-                mission
-            )
-
             if not result["success"]:
 
                 step.failed()
 
                 return result
+
+            observation = capability.observe()
+
+            interpretation = capability.interpret(
+                observation
+            )
+
+            decision = self.decision_engine.decide(
+                step,
+                interpretation
+            )
+
+            if decision.action != "continue":
+
+                step.failed()
+
+                return decision
+
+            capability.apply_result(
+                mission,
+                interpretation
+            )
+
+            capability.cleanup(
+                mission
+            )
 
             step.completed(
                 result.get("data")

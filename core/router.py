@@ -333,10 +333,10 @@ async def handle_command(command):
 
             return
 
-        for task in plan.tasks:
+        for step in plan.tasks:
 
             result = execute_intent(
-                task.__dict__
+                step
             )
 
             response = (

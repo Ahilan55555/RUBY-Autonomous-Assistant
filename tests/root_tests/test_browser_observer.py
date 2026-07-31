@@ -1,25 +1,35 @@
 from modules.perception.browser_observer import BrowserObserver
 
-observer = BrowserObserver()
 
-observation = observer.observe()
+def main():
 
-print("\nButtons\n")
+    observer = BrowserObserver()
 
-print(observation.buttons)
+    observation = observer.observe()
 
-print("\nLinks\n")
+    print("\n========== BUTTONS ==========\n")
+    print(observation.buttons)
 
-print(observation.links)
+    print("\n========== LINKS ==========\n")
+    print(observation.links)
 
-print("\nHeadings\n")
+    print("\n========== HEADINGS ==========\n")
+    print(observation.headings)
 
-print(observation.headings)
+    print("\n========== INPUTS ==========\n")
+    print(observation.inputs)
 
-print("\nInputs\n")
+    print("\n========== PAGE TEXT ==========\n")
+    print(observation.page_text[:30])
 
-print(observation.inputs)
+    print("\n========== TOTALS ==========\n")
+    print(f"Buttons : {len(observation.buttons)}")
+    print(f"Links   : {len(observation.links)}")
+    print(f"Headings: {len(observation.headings)}")
+    print(f"Inputs  : {len(observation.inputs)}")
+    print(f"PageTxt : {len(observation.page_text)}")
+    print(f"Visible : {len(observation.visible_text)}")
 
-print("\nPage Text\n")
 
-print(observation.page_text[:30])
+if __name__ == "__main__":
+    main()

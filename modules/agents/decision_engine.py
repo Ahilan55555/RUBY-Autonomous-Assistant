@@ -1,21 +1,44 @@
+from core.browser_states import BrowserState
+from core.decision import Decision
+
+
 class DecisionEngine:
 
     def decide(
         self,
         task,
-        observation
+        interpretation
     ):
 
-        if observation["completed"]:
+        if not interpretation.success:
 
-            return {
+            return Decision(
+                action="abort",
+                reason=interpretation.reason
+            )
 
-                "action": "continue"
+        if interpretation.state == BrowserState.PAGE_LOADING:
 
-            }
+            return Decision(
+                action="wait",
+                reason="Page is still loading."
+            )
 
-        return {
+        if interpretation.state == BrowserState.CAPTCHA:
 
-            "action": "abort"
+            return Decision(
+                action="request_user",
+                reason="CAPTCHA detected."
+            )
 
-        }
+        if interpretation.state == BrowserState.ERROR_PAGE:
+
+            return Decision(
+                action="retry",
+                reason="Browser error detected."
+            )
+
+        return Decision(
+            action="continue",
+            reason=interpretation.reason
+        )

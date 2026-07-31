@@ -9,6 +9,12 @@ from core.lifecycle_manager import (
     set_plugin_state
 )
 
+from core.capability_registry_v2 import register_capability
+
+from modules.capabilities.browser.search import (
+    BrowserSearchCapability,
+)
+
 loaded_plugins = []
 
 PLUGIN_FOLDER = "modules/plugins"
@@ -53,7 +59,15 @@ def initialize_runtime():
 
             print(f"Loaded plugin: {module_name}")
 
+    register_capability(
+        "google_search",
+        BrowserSearchCapability()
+    )
+
+    print("Runtime V2 capabilities registered.")
+
     print("Runtime initialized.")
+
 
 
 

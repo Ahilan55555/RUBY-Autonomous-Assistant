@@ -96,17 +96,44 @@ from modules.agents.browser_agent import (
     BrowserAgent
 )
 
+from core.capability_registry_v2 import get_capability
+
+from core.pipeline_executor import PipelineExecutor
+
+from core.mission import Mission
+
+import traceback
+
+from dataclasses import is_dataclass, asdict
+
 browser = BrowserAgent()
+pipeline = PipelineExecutor()
 
 def execute_intent(task):
 
     start_time = time.time()
 
-    intent = task.get("intent")
+    if isinstance(task, dict):
 
-    target = task.get("target")
+        intent = task.get(
+            "intent"
+        )
 
-    query = task.get("query")
+        target = task.get(
+            "target"
+        )
+
+        query = task.get(
+            "query"
+        )
+
+    else:
+
+        intent = task.intent
+
+        target = task.target
+
+        query = task.query
 
 
     # ---------------------------------
@@ -511,9 +538,39 @@ def execute_intent(task):
 
         elif intent == "google_search":
 
-            result = browser.search_google(
-                query
+            capability = get_capability(
+                intent
             )
+
+            if capability is None:
+
+                result = {
+                    "success": False,
+                    "error": "Google Search capability is not registered."
+                }
+
+                record_execution(
+                    task,
+                    result
+                )
+
+                record_strategy(
+                    intent,
+                    False
+                )
+
+                return result
+
+            mission = Mission(
+                goal=query
+            )
+
+            result = pipeline.run(
+                capability,
+                task,
+                mission
+            )
+
             print(result)
 
             update_state(
@@ -534,6 +591,7 @@ def execute_intent(task):
                 )
 
                 return result
+
 #MOUSE
 
         elif intent == "mouse":
@@ -709,10 +767,8 @@ def execute_intent(task):
 
 
     except Exception as e:
+        traceback.print_exc()
 
-        print(
-            f"Execution failed: {e}"
-        )
 
         result = {
 
@@ -763,9 +819,15 @@ def execute_intent(task):
             "success": True
         }
 
+    task_to_store = (
+        asdict(task)
+        if is_dataclass(task)
+        else task
+    )
+
     update_state(
         "last_task",
-        task
+        task_to_store
     )
 
     update_state(

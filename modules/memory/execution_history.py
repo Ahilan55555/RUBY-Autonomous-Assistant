@@ -2,6 +2,8 @@ import json
 
 from datetime import datetime
 
+from dataclasses import asdict, is_dataclass
+
 
 HISTORY_FILE = (
     "data/execution_history.json"
@@ -47,8 +49,11 @@ def record_execution(
 
     history = load_history()
 
-    history.append(
+    if is_dataclass(task):
 
+        task = asdict(task)
+
+    history.append(
         {
             "timestamp": str(
                 datetime.now()
@@ -59,5 +64,4 @@ def record_execution(
             "result": result
         }
     )
-
     save_history(history)

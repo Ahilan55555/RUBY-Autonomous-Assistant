@@ -1,5 +1,6 @@
 import json
 
+from dataclasses import is_dataclass, asdict
 
 STATE_FILE = (
     "data/world_state.json"
@@ -61,11 +62,13 @@ def save_state():
 
 
 def update_state(
-
     key,
-
     value
 ):
+
+    if is_dataclass(value):
+
+        value = asdict(value)
 
     world_state[key] = value
 

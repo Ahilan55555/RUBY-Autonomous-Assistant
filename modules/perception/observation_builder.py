@@ -31,38 +31,52 @@ class ObservationBuilder:
                 name
             )
 
-            if "button" in role:
-
-                observation.buttons.append(
-                    name
-                )
-
-            elif "link" in role:
-
-                observation.links.append(
-                    name
-                )
-
-            elif "heading" in role:
-
-                observation.headings.append(
-                    name
-                )
-
-            elif (
-                "entry" in role
-                or
-                "text" in role
+            # Buttons
+            if role in (
+                "push button",
+                "toggle button",
+                "check box",
+                "radio button",
+                "menu item"
             ):
 
-                observation.inputs.append(
-                    name
-                )
+                observation.buttons.append(name)
 
+            # Links
+            elif role == "link":
+
+                observation.links.append(name)
+
+            # Headings
+            elif role == "heading":
+
+                observation.headings.append(name)
+
+            # Input fields
+            elif role in (
+                "entry",
+                "password text",
+                "combo box"
+            ):
+
+                observation.inputs.append(name)
+
+            # Everything else
             else:
 
-                observation.page_text.append(
-                    name
-                )
+                observation.page_text.append(name)
+
+
+        observation.buttons = list(dict.fromkeys(observation.buttons))
+
+        observation.links = list(dict.fromkeys(observation.links))
+
+        observation.headings = list(dict.fromkeys(observation.headings))
+
+        observation.inputs = list(dict.fromkeys(observation.inputs))
+
+        observation.page_text = list(dict.fromkeys(observation.page_text))
+
+        observation.visible_text = list(dict.fromkeys(observation.visible_text))
 
         return observation

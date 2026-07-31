@@ -14,12 +14,40 @@ class Capability:
     ):
         raise NotImplementedError
 
-    def collect_result(
+    def execute(
         self,
-        mission,
+        task,
+        mission
+    ):
+        raise NotImplementedError
+
+    def observe(self):
+        return None
+
+    def interpret(
+        self,
         observation
     ):
         return observation
+
+    
+
+
+    def decide(
+        self,
+        interpretation,
+        mission
+    ):
+        return interpretation
+
+
+    def apply_result(
+        self,
+        mission,
+        interpretation
+    ):
+        return interpretation
+
 
     def cleanup(
         self,
