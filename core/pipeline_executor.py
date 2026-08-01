@@ -98,4 +98,10 @@ class PipelineExecutor:
             mission
         )
 
-        return result
+        return {
+            "success": (
+                decision.action == "continue"
+            ),
+            "decision": decision,
+            "result": result
+        }

@@ -6,15 +6,11 @@
     "current_directory": null,
     "last_goal": null,
     "last_task": {
-        "intent": "open_website",
-        "target": "youtube",
-        "query": ""
+        "intent": "google_search",
+        "target": "",
+        "query": "hi"
     },
     "last_action": null,
     "last_result": {
-        "success": true
-    },
-    "screen_context": null,
-    "last_search": "hi",
-    "current_website": "youtube"
-}
+        "success": true,
+        "decision": 

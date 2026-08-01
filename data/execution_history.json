@@ -2825,5 +2825,39 @@
             "success": false,
             "error": "Unable to build plan"
         }
+    },
+    {
+        "timestamp": "2026-07-31 22:08:57.087934",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-07-31 22:09:07.679297",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "'Decision' object is not subscriptable"
+        }
+    },
+    {
+        "timestamp": "2026-07-31 22:11:47.416148",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
     }
 ]

@@ -1,6 +1,6 @@
 {
     "favorite_topic": "robotics",
-    "last_command": "search hi in hyoutube",
+    "last_command": "open youtube and search hi",
     "command_usage": {
         "open firefox": 9,
         "open github": 11,
@@ -284,7 +284,7 @@
         "i only know basic pythobn": 1,
         "search google cats": 3,
         "search google artificial intelligence": 1,
-        "open youtube and search hi": 3,
+        "open youtube and search hi": 5,
         "search hifiey": 1,
         "hifiey": 1,
         "search hifi": 2,

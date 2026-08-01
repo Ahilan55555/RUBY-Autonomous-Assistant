@@ -9,7 +9,7 @@
     },
     "google_search": {
         "success": 37,
-        "failure": 8
+        "failure": 9
     },
     "open_app": {
         "success": 8,
@@ -32,7 +32,7 @@
         "failure": 1
     },
     "open_website": {
-        "success": 19,
+        "success": 21,
         "failure": 3
     },
     "say_funny_joke": {
