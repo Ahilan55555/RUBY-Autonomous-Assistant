@@ -2859,5 +2859,675 @@
         "result": {
             "success": true
         }
+    },
+    {
+        "timestamp": "2026-08-01 10:34:03.306042",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:19:44.832498",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:25:20.732466",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:25:26.698874",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:28:08.985408",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:28:15.369632",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:32:05.849414",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:32:12.001915",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:42:19.016152",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:42:26.075603",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:47:52.737090",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-01 11:47:59.692950",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-01 12:27:07.347645",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-01 12:30:01.883978",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-01 12:30:05.415198",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-01 12:37:42.271904",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-01 12:37:46.069633",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:19:48.363840",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:23:40.805649",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:35:12.226027",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:38:26.193743",
+        "task": {
+            "intent": "open_website",
+            "target": "chatGPT",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> chatGPT"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:38:26.305032",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:39:24.021387",
+        "task": {
+            "intent": "open_website",
+            "target": "chatgpt",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> chatgpt"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:39:24.148701",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:40:23.260390",
+        "task": {
+            "intent": "window",
+            "target": "focus",
+            "query": "Firefox"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:40:26.998625",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Ask|hi"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:40:27.109138",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:43:42.339945",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:44:11.179944",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:44:40.730409",
+        "task": {
+            "intent": "open_website",
+            "target": "chatgpt",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> chatgpt"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:45:22.586535",
+        "task": {
+            "intent": "file.create_folder",
+            "target": "files",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: file.create_folder -> files"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:45:22.594469",
+        "task": {
+            "intent": "file.write",
+            "target": "",
+            "query": "files"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: file.write -> "
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:45:50.581903",
+        "task": {
+            "intent": "file.create_file",
+            "target": "ahilan.txt",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: file.create_file -> ahilan.txt"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:47:48.444521",
+        "task": {
+            "intent": "open_website",
+            "target": "github",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Object of type Decision is not JSON serializable"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:48:46.329540",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Object of type Decision is not JSON serializable"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:48:58.702526",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "maskara"
+        },
+        "result": {
+            "success": false,
+            "error": "Object of type Decision is not JSON serializable"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:49:07.229939",
+        "task": {
+            "intent": "open_website",
+            "target": "google",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> google"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 11:49:20.440782",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "maskars"
+        },
+        "result": {
+            "success": false,
+            "error": "Object of type Decision is not JSON serializable"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:07:33.083215",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:07:52.988624",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:08:59.972762",
+        "task": {
+            "intent": "open_website",
+            "target": "",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> "
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:10:43.230620",
+        "task": {
+            "intent": "open_website",
+            "target": "google",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> google"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:10:52.332266",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hifi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:11:02.449181",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:11:08.611144",
+        "task": {
+            "intent": "open_website",
+            "target": "google",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> google"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:11:16.624382",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:35:49.335047",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:36:08.408823",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:36:22.611372",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "ai"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:36:49.141606",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 12:37:51.079495",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "chatgpt"
+        },
+        "result": {
+            "success": false,
+            "error": "Object of type Decision is not JSON serializable"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 14:33:44.410681",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 14:34:18.413498",
+        "task": {
+            "intent": "terminal",
+            "target": "pwd",
+            "query": ""
+        },
+        "result": {
+            "success": true,
+            "output": "/home/ahilan/ruby\n"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 14:34:25.667968",
+        "task": {
+            "intent": "file",
+            "target": "list",
+            "query": ""
+        },
+        "result": {
+            "success": true,
+            "files": [
+                "test_fusion,py",
+                "memory",
+                "scripts",
+                "README.md",
+                "configs",
+                "test_screen_awarness.p",
+                "project_memory_test.py",
+                "voices",
+                "core",
+                "demo_project",
+                "screen.png",
+                "docs",
+                "ahilan.txt",
+                "temp",
+                "ScreenUnderstandingAgent:",
+                ".gitignore",
+                "archive",
+                "notes.txt",
+                "venv",
+                "models",
+                "requirements.txt",
+                "main.py",
+                "calculator",
+                "logs",
+                "ttest.py",
+                "data",
+                ".git",
+                "tests",
+                "test.py",
+                "modules",
+                "image_size_test.py",
+                "cv2"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-08-02 14:46:32.133237",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
     }
 ]

@@ -40,9 +40,27 @@ def find_application(name):
 
     name = name.lower()
 
+    print("\n===== APPLICATIONS =====")
+
     for app in desktop:
 
-        if app and name in app.name.lower():
+        if app is None:
+            continue
+
+        print(app.name)
+
+    print("========================")
+
+    for app in desktop:
+
+        if app is None:
+            continue
+
+        print("Checking:", app.name)
+
+        if name in app.name.lower():
+
+            print("SELECTED:", app.name)
 
             return app
 
@@ -337,38 +355,64 @@ def find_active_document(
         application
     )
 
-    # ---------- First preference ----------
-    # Return the focused document
+    candidates = []
 
     for element in elements:
 
         if element["role"] != "document web":
             continue
 
-        state_text = " ".join(
-            element["states"]
-        ).lower()
-
-        if "focused" in state_text:
-
-            return element["node"]
-
-    # ---------- Second preference ----------
-    # Return a showing document
-
-    for element in elements:
-
-        if element["role"] != "document web":
-            continue
+        score = 0
 
         state_text = " ".join(
             element["states"]
         ).lower()
 
+        # Visible documents are preferred
         if "showing" in state_text:
+            score += 20
 
-            return element["node"]
+        # Focused documents are preferred
+        if "focused" in state_text:
+            score += 30
 
-    # ---------- Fallback ----------
+        # Large documents are usually the main browser page
+        bounds = element["bounds"]
 
-    return application
+        if bounds is not None:
+
+            score += bounds["width"] // 100
+
+            score += bounds["height"] // 100
+
+        candidates.append(
+
+            (
+                score,
+                element
+            )
+
+        )
+
+    if not candidates:
+
+        return application
+
+    candidates.sort(
+        reverse=True,
+        key=lambda x: x[0]
+    )
+
+    print("\n========== DOCUMENT SCORES ==========")
+
+    for score, element in candidates:
+
+        print(
+            score,
+            "|",
+            element["name"]
+        )
+
+    print("=====================================\n")
+
+    return candidates[0][1]["node"]

@@ -45,9 +45,19 @@ class BrowserSearchCapability(Capability):
 
             app="Firefox",
 
-            role="text_input"
+            role="text_input",
+
+            text="search"
 
         )
+
+        print("\n========== TEXTBOX ==========")
+        print(textbox)
+        print("=============================\n")
+
+        print("\n========== TEXTBOX ==========")
+        print(textbox)
+        print("=============================\n")
 
         if textbox is None:
 
@@ -60,6 +70,13 @@ class BrowserSearchCapability(Capability):
             query
 
         )
+
+        print("\n========== ACTION QUEUE ==========")
+
+        for action in task.action_queue:
+            print(action)
+
+        print("===============================\n")
 
         plan = Plan(
 

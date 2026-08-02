@@ -1,6 +1,6 @@
 {
     "terminal": {
-        "success": 11,
+        "success": 12,
         "failure": 1
     },
     "python": {
@@ -9,14 +9,14 @@
     },
     "google_search": {
         "success": 37,
-        "failure": 9
+        "failure": 27
     },
     "open_app": {
         "success": 8,
         "failure": 1
     },
     "file": {
-        "success": 4,
+        "success": 5,
         "failure": 3
     },
     "message": {
@@ -32,8 +32,8 @@
         "failure": 1
     },
     "open_website": {
-        "success": 21,
-        "failure": 3
+        "success": 39,
+        "failure": 12
     },
     "say_funny_joke": {
         "success": 0,
@@ -44,19 +44,31 @@
         "failure": 1
     },
     "window": {
-        "success": 44,
+        "success": 45,
         "failure": 9
     },
     "screen": {
-        "success": 37,
+        "success": 38,
         "failure": 12
     },
     "keyboard": {
-        "success": 22,
+        "success": 25,
         "failure": 5
     },
     "mouse": {
         "success": 1,
         "failure": 0
+    },
+    "file.create_folder": {
+        "success": 0,
+        "failure": 1
+    },
+    "file.write": {
+        "success": 0,
+        "failure": 1
+    },
+    "file.create_file": {
+        "success": 0,
+        "failure": 1
     }
 }

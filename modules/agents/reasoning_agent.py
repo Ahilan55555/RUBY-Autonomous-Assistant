@@ -61,6 +61,17 @@ class ReasoningAgent:
 
         best_score = -1
 
+        print("\n========== CANDIDATES ==========")
+
+        for e in candidates:
+            print(
+                e["role"],
+                " | ",
+                e["name"]
+            )
+
+        print("===============================\n")
+
         for element in candidates:
 
             score = 0
@@ -70,6 +81,8 @@ class ReasoningAgent:
             states = " ".join(
                 element["states"]
             ).lower()
+
+            name = element["name"].lower()
 
             if "visible" in states:
                 score += 10
@@ -95,9 +108,38 @@ class ReasoningAgent:
             if bounds["y"] < 300:
                 score += 5
 
+            # ----------------------------------
+            # Semantic Scoring
+            # ----------------------------------
+
+            if role == "text_input":
+
+                if "search" in name:
+                    score += 100
+
+                if "search youtube" in name:
+                    score += 100
+
+                if "address" in name:
+                    score += 80
+
+                if "url" in name:
+                    score += 80
+
+                if "chat with chatgpt" in name:
+                    score -= 200
+
+                if "chatgpt" in name:
+                    score -= 200
+
+                if "prompt" in name:
+                    score -= 100
+
+                if "message" in name:
+                    score -= 100
+
             print(
-                element["name"],
-                score
+                f"{element['name']} -> {score}"
             )
 
             if score > best_score:

@@ -65,6 +65,17 @@ class PerceptionManager:
             active_document
         )
 
+        print("\n========== RAW UI ELEMENTS ==========")
+
+        for e in elements:
+            print(
+                e["role"],
+                "|",
+                e["name"]
+            )
+
+        print("====================================\n")
+
         clean = []
 
         for element in elements:

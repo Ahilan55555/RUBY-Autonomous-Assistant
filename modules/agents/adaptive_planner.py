@@ -277,8 +277,20 @@ class AdaptivePlanner:
 
         planner_start = time.time()
 
+        planner_context = {
+
+            "active_app": active_app,
+
+            "current_website": current_website
+
+        }
+
         plan = self.llm.plan(
-            goal
+
+            goal,
+
+            planner_context
+
         )
 
         print(
