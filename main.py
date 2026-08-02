@@ -1,10 +1,8 @@
 import asyncio
-from core.event_bus import event_bus_worker
-from core.bootstrap import initialize_runtime
+from core.event_bus import (event_bus_worker , subscribe)
 from core.router import handle_command
 from core.monitor import system_monitor
 from core.event_queue import event_worker
-from core.event_bus import subscribe
 from modules.agents.monitor_agent import MonitorAgent
 from modules.agents.goal_retry_agent import GoalRetryAgent
 from core.bootstrap import (
