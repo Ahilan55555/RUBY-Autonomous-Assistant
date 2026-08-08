@@ -93,15 +93,26 @@ class PipelineExecutor:
             mission,
             decision
         )
+        decision_data = {
+
+            "action": decision.action,
+
+            "reason": decision.reason
+
+        }
 
         capability.cleanup(
             mission
         )
 
         return {
+
             "success": (
                 decision.action == "continue"
             ),
-            "decision": decision,
+
+            "decision": decision_data,
+
             "result": result
+
         }

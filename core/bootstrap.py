@@ -60,8 +60,78 @@ def initialize_runtime():
             print(f"Loaded plugin: {module_name}")
 
     register_capability(
-        "google_search",
-        BrowserSearchCapability()
+        intent="google_search",
+        capability=BrowserSearchCapability(),
+        purpose="Search Google using the browser.",
+        limitations="Only searches Google.",
+        examples=[
+            "search python on google",
+            "google AI news"
+        ]
+    )
+    register_capability(
+
+        intent="browser",
+
+        target="search_google",
+
+        capability=BrowserSearchCapability(),
+
+        purpose="Search Google.",
+
+        limitations="Requires browser access.",
+
+        examples=[
+
+            "search python on google",
+
+            "google AI news"
+
+        ]
+
+    )
+    register_capability(
+
+        intent="browser",
+
+        target="search_youtube",
+
+        capability=BrowserSearchCapability(),
+
+        purpose="Search YouTube.",
+
+        limitations="Requires YouTube.",
+
+        examples=[
+
+            "search music on youtube",
+
+            "find robot videos"
+
+        ]
+
+    )
+
+    register_capability(
+
+        intent="browser",
+
+        target="ask_chatgpt",
+
+        capability=BrowserSearchCapability(),
+
+        purpose="Send a prompt to ChatGPT.",
+
+        limitations="Requires ChatGPT page.",
+
+        examples=[
+
+            "ask ChatGPT hello",
+
+            "ask ChatGPT explain AI"
+
+        ]
+
     )
 
     print("Runtime V2 capabilities registered.")

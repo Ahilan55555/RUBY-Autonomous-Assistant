@@ -37,7 +37,11 @@ Example:
 # -------------------------------------------------
 
 capabilities = {}
+def capability_exists(
+    intent
+):
 
+    return intent in capabilities
 
 # -------------------------------------------------
 # Register Capability
@@ -46,7 +50,10 @@ capabilities = {}
 def register_capability(
     intent,
     capability,
-    target=None
+    target=None,
+    purpose="",
+    limitations="",
+    examples=None
 ):
     """
     Registers a capability object.
@@ -68,7 +75,12 @@ def register_capability(
     if intent not in capabilities:
         capabilities[intent] = {}
 
-    capabilities[intent][target] = capability
+    capabilities[intent][target] = {
+        "object": capability,
+        "purpose": purpose,
+        "limitations": limitations,
+        "examples": examples or []
+    }
 
 
 # -------------------------------------------------
@@ -90,7 +102,12 @@ def get_capability(
     if intent not in capabilities:
         return None
 
-    return capabilities[intent].get(target)
+    data = capabilities[intent].get(target)
+
+    if data is None:
+        return None
+
+    return data["object"]
 
 
 # -------------------------------------------------
@@ -128,111 +145,48 @@ def show_capabilities():
 
 def capability_summary():
 
-    descriptions = {
-
-        "open_app":
-            "Launch an installed desktop application.",
-
-        "open_website":
-            "Open a supported website in the browser.",
-
-        "google_search":
-            "Search Google for the provided query.",
-
-        "browser":
-            (
-                "Perform browser-specific actions such as "
-                "searching YouTube, searching Google, or "
-                "interacting with ChatGPT."
-            ),
-
-        "terminal":
-            "Execute supported terminal commands.",
-
-        "file":
-            "Read, write, create, delete and list files.",
-
-        "project":
-            "Analyze or inspect the current project.",
-
-        "python":
-            "Execute Python scripts.",
-
-        "keyboard":
-            "Perform keyboard input such as typing or pressing keys.",
-
-        "mouse":
-            "Perform mouse actions such as click or move.",
-
-        "screen":
-            "Interact with visible screen text using OCR.",
-
-        "window":
-            "Control application windows."
-    }
-
-    limitations = {
-
-        "open_website":
-            "Only supports registered websites.",
-
-        "google_search":
-            "Searches Google only. It does not search YouTube unless requested.",
-
-        "browser":
-            "Use only for browser-specific actions.",
-
-        "terminal":
-            "Only supported terminal commands may be executed.",
-
-        "file":
-            "Only supported file operations may be executed."
-    }
-
     lines = []
 
     for intent, targets in capabilities.items():
 
         lines.append("=" * 40)
 
-        lines.append(
-            f"Intent: {intent}"
-        )
+        lines.append(f"Intent: {intent}")
+        lines.append("")
 
-        if len(targets) == 1 and None in targets:
+        for target, data in targets.items():
 
-            lines.append(
-                "Targets: None"
-            )
-
-        else:
+            lines.append(f"Target: {target}")
+            lines.append("")
 
             lines.append(
-                "Targets:"
+                f"Purpose: {data['purpose'] or 'Not specified'}"
             )
-
-            for target in targets:
-
-                if target is None:
-                    continue
-
-                lines.append(
-                    f"  - {target}"
-                )
-
-        if intent in descriptions:
 
             lines.append("")
-            lines.append(
-                f"Purpose: {descriptions[intent]}"
-            )
-
-        if intent in limitations:
 
             lines.append(
-                f"Limitations: {limitations[intent]}"
+                f"Limitations: {data['limitations'] or 'None'}"
             )
 
-        lines.append("")
+            lines.append("")
+
+            lines.append("Examples:")
+
+            if data["examples"]:
+
+                for example in data["examples"]:
+
+                    lines.append(
+                        f"  - {example}"
+                    )
+
+            else:
+
+                lines.append("  - None")
+
+            lines.append("")
+
+    lines.append("=" * 40)
 
     return "\n".join(lines)

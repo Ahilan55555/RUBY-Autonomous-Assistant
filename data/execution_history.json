@@ -3529,5 +3529,547 @@
             "success": false,
             "error": "Unable to build plan"
         }
+    },
+    {
+        "timestamp": "2026-08-02 16:17:10.458260",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 16:17:13.369912",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 16:17:30.069356",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 16:17:33.485610",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 20:51:42.144426",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-02 20:51:43.062380",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-02 20:52:21.427059",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-03 19:07:53.478386",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "atspi_error: The application no longer exists (0)"
+        }
+    },
+    {
+        "timestamp": "2026-08-03 20:37:23.674063",
+        "task": {
+            "intent": "open_website",
+            "target": "google",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: open_website -> google"
+        }
+    },
+    {
+        "timestamp": "2026-08-03 20:37:27.074594",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-03 20:37:32.611593",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-03 20:37:32.726648",
+        "task": {
+            "intent": "keyboard",
+            "target": "enter",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-03 20:37:54.391589",
+        "task": {
+            "intent": "open_website",
+            "target": "youtube",
+            "query": ""
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-03 20:37:57.426231",
+        "task": {
+            "intent": "google_search",
+            "target": "",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-04 18:03:14.845564",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Unknown intent: browser"
+        }
+    },
+    {
+        "timestamp": "2026-08-04 18:03:50.312577",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unknown intent: browser"
+        }
+    },
+    {
+        "timestamp": "2026-08-04 19:14:06.136296",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-04 19:15:37.197319",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-04 19:16:07.006832",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": "hello"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-04 19:43:10.898653",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-04 21:09:48.080479",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-07 18:01:10.883690",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-07 18:55:28.115564",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "what is python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-07 19:00:57.458714",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "what is python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-07 19:01:30.741678",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-07 19:53:42.519828",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-07 19:55:17.167884",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": "hello"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-08 10:46:29.551638",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "hifi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 10:58:22.520144",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-08 11:25:38.333386",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-08 11:43:21.714789",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-08 11:43:40.062711",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-08 11:43:57.254345",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": ""
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-08 11:44:13.286412",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-08 11:44:30.040966",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-08 11:44:46.442730",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-08 11:45:02.004904",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": ""
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
     }
 ]

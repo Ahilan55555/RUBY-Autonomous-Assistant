@@ -1,11 +1,14 @@
 from core.plan import Plan
 from core.task_builder import TaskBuilder
-
+import time
 from modules.agents.ui_agent import UIAgent
 from modules.capabilities.base import Capability
 from modules.perception.browser_observer import BrowserObserver
 from modules.interpreters.browser import BrowserInterpreter
 from modules.agents.decision_engine import DecisionEngine
+from modules.agents.browser_navigation_agent import (
+    BrowserNavigationAgent
+)
 
 
 class BrowserSearchCapability(Capability):
@@ -15,6 +18,8 @@ class BrowserSearchCapability(Capability):
         self.tasks = TaskBuilder()
 
         self.ui = UIAgent()
+
+        self.navigator = BrowserNavigationAgent()
 
         self.observer = BrowserObserver()
 
@@ -41,19 +46,89 @@ class BrowserSearchCapability(Capability):
 
         query = step.query
 
-        textbox = self.ui.find_best(
+        target = step.target
 
-            app="Firefox",
 
-            role="text_input",
 
-            text="search"
+        print("\n===== ENSURE WEBSITE =====")
 
-        )
+        if target == "search_google":
+            self.navigator.open_google()
 
-        print("\n========== TEXTBOX ==========")
-        print(textbox)
-        print("=============================\n")
+        elif target == "search_youtube":
+            self.navigator.open_youtube()
+            
+
+        elif target == "ask_chatgpt":
+            self.navigator.open_chatgpt()
+
+        else:
+
+            print(f"Unknown browser target: {target}")
+
+            return None
+
+        time.sleep(2)
+
+
+        print("==========================\n")
+
+        print("\n========== BROWSER TARGET ==========")
+        print(target)
+        print("===================================\n")
+
+        if target == "search_google":
+
+            textbox = self.ui.find_best(
+
+                app="Firefox",
+
+                role="text_input",
+
+                text="search"
+
+            )
+
+        elif target == "search_youtube":
+
+            textbox = self.ui.find_best(
+
+                app="Firefox",
+
+                role="text_input",
+
+                text="search"
+
+            )
+
+
+        elif target == "ask_chatgpt":
+
+            textbox = self.ui.find_best(
+                app="Firefox",
+                role="entry",
+                text="Chat with ChatGPT"
+            )
+
+            if textbox is None:
+
+                textbox = self.ui.find_best(
+                    app="Firefox",
+                    role="entry"
+                )
+
+            if textbox is None:
+
+                textbox = self.ui.find_best(
+                    app="Firefox",
+                    role="text_input"
+                )
+
+        else:
+
+            print(f"Unknown browser target: {target}")
+
+            return None
 
         print("\n========== TEXTBOX ==========")
         print(textbox)
@@ -78,10 +153,21 @@ class BrowserSearchCapability(Capability):
 
         print("===============================\n")
 
+        goal_map = {
+
+            "search_google": "Search Google",
+
+            "search_youtube": "Search YouTube",
+
+            "ask_chatgpt": "Ask ChatGPT"
+
+        }
+
         plan = Plan(
-
-            goal="Search Google"
-
+            goal=goal_map.get(
+                target,
+                "Browser Action"
+            )
         )
 
         plan.add_task(
@@ -92,6 +178,7 @@ class BrowserSearchCapability(Capability):
 
         return plan
 
+    
 
     def observe(self):
 
@@ -103,7 +190,13 @@ class BrowserSearchCapability(Capability):
         decision
     ):
 
-        return decision
+        return {
+
+            "action": decision.action,
+
+            "reason": decision.reason
+
+        }
 
     def cleanup(
         self,

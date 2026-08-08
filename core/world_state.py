@@ -22,23 +22,40 @@ def load_state():
 
         return {
 
-            "active_app": None,
+            # -----------------------------
+            # Application State
+            # -----------------------------
 
+            "active_app": None,
             "active_window": None,
 
-            "current_url": None,
+            # -----------------------------
+            # Browser State
+            # -----------------------------
 
+            "current_website": None,
+            "current_url": None,
             "current_page": None,
 
-            "current_directory": None,
+            # -----------------------------
+            # Workspace
+            # -----------------------------
+
+            "working_directory": None,
+
+            # -----------------------------
+            # Task History
+            # -----------------------------
 
             "last_goal": None,
-
             "last_task": None,
-
             "last_action": None,
-
             "last_result": None,
+            "last_search": None,
+
+            # -----------------------------
+            # Screen
+            # -----------------------------
 
             "screen_context": None
         }

@@ -9,7 +9,7 @@
     },
     "google_search": {
         "success": 37,
-        "failure": 27
+        "failure": 33
     },
     "open_app": {
         "success": 8,
@@ -32,8 +32,8 @@
         "failure": 1
     },
     "open_website": {
-        "success": 39,
-        "failure": 12
+        "success": 45,
+        "failure": 13
     },
     "say_funny_joke": {
         "success": 0,
@@ -52,7 +52,7 @@
         "failure": 12
     },
     "keyboard": {
-        "success": 25,
+        "success": 26,
         "failure": 5
     },
     "mouse": {
@@ -70,5 +70,9 @@
     "file.create_file": {
         "success": 0,
         "failure": 1
+    },
+    "browser": {
+        "success": 15,
+        "failure": 8
     }
 }

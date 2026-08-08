@@ -2,6 +2,10 @@ from modules.automation.apps import (
     open_firefox
 )
 
+from core.world_state import (
+    update_state
+)
+
 import pyautogui
 
 import time
@@ -12,15 +16,32 @@ class BrowserNavigationAgent:
 
     def _prepare_browser(self):
 
-        open_firefox()
+        # Only open Firefox if it is not already the active application.
+        # For now we use the world state that Ruby maintains.
 
-        time.sleep(3)
+        from core.world_state import get_state
+
+        state = get_state()
+
+        active_app = state.get(
+            "active_app"
+        )
+
+        if active_app != "firefox":
+
+            open_firefox()
+
+            time.sleep(3)
+
+        else:
+
+            print(
+                "[Browser Navigation] "
+                "Firefox already active. Reusing it."
+            )
 
 
-    def youtube_search(
-        self,
-        query
-    ):
+    def open_google(self):
 
         self._prepare_browser()
 
@@ -32,7 +53,7 @@ class BrowserNavigationAgent:
         time.sleep(0.5)
 
         pyautogui.write(
-            f"https://www.youtube.com/results?search_query={query}",
+            "https://www.google.com",
             interval=0.02
         )
 
@@ -40,18 +61,20 @@ class BrowserNavigationAgent:
             "enter"
         )
 
-        return {
+        time.sleep(2)
 
-            "success": True,
+        update_state(
+            "active_app",
+            "firefox"
+        )
 
-            "query": query
-        }
+        update_state(
+            "current_website",
+            "google"
+        )
 
 
-    def google_search(
-        self,
-        query
-    ):
+    def open_youtube(self):
 
         self._prepare_browser()
 
@@ -63,7 +86,7 @@ class BrowserNavigationAgent:
         time.sleep(0.5)
 
         pyautogui.write(
-            f"https://www.google.com/search?q={query}",
+            "https://www.youtube.com",
             interval=0.02
         )
 
@@ -71,18 +94,20 @@ class BrowserNavigationAgent:
             "enter"
         )
 
-        return {
+        time.sleep(2)
 
-            "success": True,
+        update_state(
+            "active_app",
+            "firefox"
+        )
 
-            "query": query
-        }
+        update_state(
+            "current_website",
+            "youtube"
+        )
 
 
-    def github_search(
-        self,
-        query
-    ):
+    def open_chatgpt(self):
 
         self._prepare_browser()
 
@@ -94,7 +119,7 @@ class BrowserNavigationAgent:
         time.sleep(0.5)
 
         pyautogui.write(
-            f"https://github.com/search?q={query}",
+            "https://chatgpt.com",
             interval=0.02
         )
 
@@ -102,9 +127,14 @@ class BrowserNavigationAgent:
             "enter"
         )
 
-        return {
+        time.sleep(2)
 
-            "success": True,
+        update_state(
+            "active_app",
+            "firefox"
+        )
 
-            "query": query
-        }
+        update_state(
+            "current_website",
+            "chatgpt"
+        )

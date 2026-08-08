@@ -14,6 +14,10 @@ from modules.agents.context_agent import (
     ContextAgent
 )
 
+from modules.agents.planner_validator import (
+    PlannerValidator
+)
+
 import time
 
 
@@ -292,6 +296,44 @@ class AdaptivePlanner:
             planner_context
 
         )
+        validator = PlannerValidator()
+
+        validation = validator.validate(
+            plan
+        )
+
+        if not validation["valid"]:
+
+            print()
+
+            print("========== PLANNER VALIDATION FAILED ==========")
+
+            print(
+                "Intent:",
+                validation["intent"]
+            )
+
+            print(
+                "Target:",
+                validation["target"]
+            )
+
+            print(
+                "Reason:",
+                validation["reason"]
+            )
+
+            print("==============================================")
+
+            return Plan(
+
+                goal=goal,
+
+                tasks=[]
+
+            )
+
+
 
         print(
             "LLM PLAN TIME:",

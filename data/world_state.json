@@ -1,55 +1,28 @@
 {
-    "active_app": null,
+    "active_app": "firefox",
     "active_window": null,
+    "current_website": "google",
     "current_url": null,
     "current_page": null,
-    "current_directory": null,
+    "working_directory": null,
     "last_goal": null,
     "last_task": {
-        "intent": "file",
-        "target": "list",
+        "intent": "browser",
+        "target": "search_google",
         "query": ""
     },
     "last_action": null,
     "last_result": {
         "success": true,
-        "files": [
-            "test_fusion,py",
-            "memory",
-            "scripts",
-            "README.md",
-            "configs",
-            "test_screen_awarness.p",
-            "project_memory_test.py",
-            "voices",
-            "core",
-            "demo_project",
-            "screen.png",
-            "docs",
-            "ahilan.txt",
-            "temp",
-            "ScreenUnderstandingAgent:",
-            ".gitignore",
-            "archive",
-            "notes.txt",
-            "venv",
-            "models",
-            "requirements.txt",
-            "main.py",
-            "calculator",
-            "logs",
-            "ttest.py",
-            "data",
-            ".git",
-            "tests",
-            "test.py",
-            "modules",
-            "image_size_test.py",
-            "cv2"
-        ]
+        "decision": {
+            "action": "continue",
+            "reason": "Unknown browser state."
+        },
+        "result": {
+            "action": "continue",
+            "reason": "Unknown browser state."
+        }
     },
-    "screen_context": null,
-    "last_search": "hi",
-    "last_terminal_command": "pwd",
-    "last_file_operation": "list"
+    "last_search": null,
+    "screen_context": null
 }

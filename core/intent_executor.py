@@ -539,7 +539,8 @@ def execute_intent(task):
         elif intent == "google_search":
 
             capability = get_capability(
-                intent
+                intent,
+                target
             )
 
             if capability is None:
@@ -591,7 +592,59 @@ def execute_intent(task):
                 )
 
                 return result
+        # ---------------------------------
+        # BROWSER (Runtime V2)
+        # ---------------------------------
 
+        elif intent == "browser":
+
+            capability = get_capability(
+                intent,
+                target
+            )
+
+            if capability is None:
+
+                result = {
+                    "success": False,
+                    "error": f"Browser capability '{target}' is not registered."
+                }
+
+                record_execution(
+                    task,
+                    result
+                )
+
+                record_strategy(
+                    intent,
+                    False
+                )
+
+                return result
+
+            mission = Mission(
+                goal=query
+            )
+
+            result = pipeline.run(
+                capability,
+                task,
+                mission
+            )
+
+            if not result["success"]:
+
+                record_execution(
+                    task,
+                    result
+                )
+
+                record_strategy(
+                    intent,
+                    False
+                )
+
+                return result
 #MOUSE
 
         elif intent == "mouse":
