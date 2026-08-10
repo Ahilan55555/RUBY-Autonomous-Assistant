@@ -86,6 +86,11 @@ class Executor:
             return self.ui.press(
                 action.key
             )
+        elif action.action == "hotkey":
+
+            return self.ui.hotkey(
+                action.keys
+            )
 
 
         elif action.action == "wait":

@@ -4071,5 +4071,245 @@
                 "reason": "Unknown browser state."
             }
         }
+    },
+    {
+        "timestamp": "2026-08-08 19:39:36.067310",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "atspi_error: The application no longer exists (0)"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 19:40:31.735637",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 19:40:39.395305",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 19:40:48.777490",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 19:40:57.348826",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": false,
+            "error": "Action.__init__() got an unexpected keyword argument 'keys'"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 19:41:25.516417",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Action.__init__() got an unexpected keyword argument 'keys'"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 19:41:35.505732",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": false,
+            "error": "Action.__init__() got an unexpected keyword argument 'keys'"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 19:41:45.546110",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": false,
+            "error": "Action.__init__() got an unexpected keyword argument 'keys'"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 19:42:50.496561",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Action.__init__() got an unexpected keyword argument 'keys'"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 20:20:11.279725",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": false,
+            "error": "atspi_error: The application no longer exists (0)"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 20:25:01.737986",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 20:25:13.212147",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-08 20:25:22.193592",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": ""
+        },
+        "result": {
+            "success": false,
+            "error": "Action.__init__() got an unexpected keyword argument 'keys'"
+        }
+    },
+    {
+        "timestamp": "2026-08-10 10:23:57.788573",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-10 10:24:13.609624",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-10 10:24:28.062805",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "ai"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-10 10:39:02.578021",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-10 10:42:06.480366",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-10 10:42:43.386743",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": false,
+            "error": "Action.__init__() got an unexpected keyword argument 'keys'"
+        }
+    },
+    {
+        "timestamp": "2026-08-10 10:54:33.034860",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
     }
 ]

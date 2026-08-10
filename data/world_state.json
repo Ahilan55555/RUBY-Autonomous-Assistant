@@ -6,23 +6,9 @@
     "current_page": null,
     "working_directory": null,
     "last_goal": null,
-    "last_task": {
-        "intent": "browser",
-        "target": "search_google",
-        "query": ""
-    },
+    "last_task": null,
     "last_action": null,
-    "last_result": {
-        "success": true,
-        "decision": {
-            "action": "continue",
-            "reason": "Unknown browser state."
-        },
-        "result": {
-            "action": "continue",
-            "reason": "Unknown browser state."
-        }
-    },
+    "last_result": null,
     "last_search": null,
     "screen_context": null
 }

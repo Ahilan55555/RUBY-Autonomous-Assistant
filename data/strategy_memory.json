@@ -73,6 +73,6 @@
     },
     "browser": {
         "success": 15,
-        "failure": 8
+        "failure": 28
     }
 }

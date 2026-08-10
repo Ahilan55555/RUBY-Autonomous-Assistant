@@ -6,6 +6,7 @@ class Action:
         target=None,
         text=None,
         key=None,
+        keys=None,
         seconds=None
     ):
 
@@ -13,6 +14,7 @@ class Action:
         self.target = target
         self.text = text
         self.key = key
+        self.keys = keys
         self.seconds = seconds
 
 

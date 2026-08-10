@@ -1,6 +1,6 @@
 {
     "favorite_topic": "robotics",
-    "last_command": "https://www.google.com",
+    "last_command": "search python on google",
     "command_usage": {
         "open firefox": 9,
         "open github": 13,
@@ -24,7 +24,7 @@
         "currentdirectory": 1,
         ">>> current directory": 2,
         "what is robotics": 7,
-        "hi": 100,
+        "hi": 101,
         "u r too slow": 1,
         "how r u": 11,
         "now u r now ur speed some what decent not too slow": 1,
@@ -264,7 +264,7 @@
         "search robotics in youtube": 1,
         "robotics": 1,
         "osearch hi": 1,
-        "search hi": 15,
+        "search hi": 19,
         "can u open youtube and search robotics": 2,
         "search robot": 1,
         "robot": 1,
@@ -336,7 +336,7 @@
         "ask chatgpt hello": 3,
         "ask chatgpt helloask chatgpt helloask chatgpt helloask chatgpt helloask chatgpt helloask chatgpt hello": 1,
         "search ai on youtube": 1,
-        "search python on google": 14,
+        "search python on google": 22,
         "exiy": 1,
         "open google and search python": 2,
         "search what is python": 1,
@@ -349,6 +349,9 @@
         "just search hifi": 1,
         "just open ypoutube and search hifi": 1,
         "just open youtube and search hifi": 2,
-        "https://www.google.com": 3
+        "https://www.google.com": 9,
+        "https://www.youtube.com": 4,
+        "search ai in google": 1,
+        "exitt": 1
     }
 }

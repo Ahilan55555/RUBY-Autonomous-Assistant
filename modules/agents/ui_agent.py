@@ -9,7 +9,8 @@ from modules.automation.mouse_controller import (
 
 from modules.automation.keyboard_controller import (
     type_text,
-    press_key
+    press_key,
+    hotkey as keyboard_hotkey
 )
 
 import time
@@ -184,6 +185,19 @@ class UIAgent:
 
         press_key(
             key
+        )
+
+        return {
+            "success": True
+        }
+
+    def hotkey(
+        self,
+        keys
+    ):
+
+        keyboard_hotkey(
+            *keys
         )
 
         return {

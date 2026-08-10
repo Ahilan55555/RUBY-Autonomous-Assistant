@@ -3,7 +3,8 @@ from modules.automation.apps import (
 )
 
 from core.world_state import (
-    update_state
+    update_state,
+    get_state
 )
 
 import pyautogui
@@ -44,6 +45,25 @@ class BrowserNavigationAgent:
     def open_google(self):
 
         self._prepare_browser()
+
+        state = get_state()
+
+        current_website = state.get(
+            "current_website"
+        )
+
+        print(
+            "[Browser Navigation] Current website:",
+            current_website
+        )
+
+        if current_website == "google":
+
+            print(
+                "[Browser Navigation] Already on Google. Reusing it."
+            )
+
+            return
 
         pyautogui.hotkey(
             "ctrl",

@@ -12,6 +12,7 @@ class ActionBuilder:
 
         queue = ActionQueue()
 
+        # Click the input field
         queue.add(
             Action(
                 action="click",
@@ -19,6 +20,18 @@ class ActionBuilder:
             )
         )
 
+        # Select all existing text
+        queue.add(
+            Action(
+                action="hotkey",
+                keys=[
+                    "ctrl",
+                    "a"
+                ]
+            )
+        )
+
+        # Type the new text
         queue.add(
             Action(
                 action="type",
@@ -26,6 +39,7 @@ class ActionBuilder:
             )
         )
 
+        # Small delay
         queue.add(
             Action(
                 action="wait",
@@ -33,6 +47,7 @@ class ActionBuilder:
             )
         )
 
+        # Submit
         queue.add(
             Action(
                 action="press",
