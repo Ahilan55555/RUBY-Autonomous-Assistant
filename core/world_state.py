@@ -1,70 +1,96 @@
 import json
+import os
 
 from dataclasses import is_dataclass, asdict
 
-STATE_FILE = (
-    "data/world_state.json"
-)
+
+STATE_FILE = "data/world_state.json"
+
+
+def default_state():
+    return {
+        # -----------------------------
+        # Application State
+        # -----------------------------
+
+        "active_app": None,
+        "active_window": None,
+
+        # -----------------------------
+        # Browser State
+        # -----------------------------
+
+        "current_website": None,
+        "current_url": None,
+        "current_page": None,
+
+        # -----------------------------
+        # Workspace
+        # -----------------------------
+
+        "working_directory": None,
+
+        # -----------------------------
+        # Task History
+        # -----------------------------
+
+        "last_goal": None,
+        "last_task": None,
+        "last_action": None,
+        "last_result": None,
+        "last_search": None,
+
+        # -----------------------------
+        # Screen
+        # -----------------------------
+
+        "screen_context": None
+    }
 
 
 def load_state():
 
+    if not os.path.exists(STATE_FILE):
+        return default_state()
+
     try:
 
-        with open(
-            STATE_FILE,
-            "r"
-        ) as file:
+        with open(STATE_FILE, "r") as file:
+            state = json.load(file)
 
-            return json.load(file)
+        # Make sure old/incomplete state files
+        # receive any newly introduced fields.
+        default = default_state()
 
-    except:
+        for key, value in default.items():
 
-        return {
+            if key not in state:
+                state[key] = value
 
-            # -----------------------------
-            # Application State
-            # -----------------------------
+        return state
 
-            "active_app": None,
-            "active_window": None,
+    except json.JSONDecodeError:
 
-            # -----------------------------
-            # Browser State
-            # -----------------------------
+        print("[World State] Invalid JSON. Resetting state.")
 
-            "current_website": None,
-            "current_url": None,
-            "current_page": None,
+        return default_state()
 
-            # -----------------------------
-            # Workspace
-            # -----------------------------
+    except OSError as e:
 
-            "working_directory": None,
+        print(f"[World State] Could not read state: {e}")
 
-            # -----------------------------
-            # Task History
-            # -----------------------------
-
-            "last_goal": None,
-            "last_task": None,
-            "last_action": None,
-            "last_result": None,
-            "last_search": None,
-
-            # -----------------------------
-            # Screen
-            # -----------------------------
-
-            "screen_context": None
-        }
+        return default_state()
 
 
 world_state = load_state()
 
 
 def save_state():
+
+    os.makedirs(
+        os.path.dirname(STATE_FILE),
+        exist_ok=True
+    )
 
     with open(
         STATE_FILE,
@@ -84,7 +110,6 @@ def update_state(
 ):
 
     if is_dataclass(value):
-
         value = asdict(value)
 
     world_state[key] = value

@@ -158,7 +158,7 @@ class ReasoningAgent:
 
         return self.find_best_element(
             elements,
-            role="entry"
+            role="text_input"
         )
 
 

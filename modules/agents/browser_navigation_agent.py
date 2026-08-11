@@ -4,8 +4,10 @@ from modules.automation.apps import (
 
 from core.world_state import (
     update_state,
-    get_state
+
 )
+
+import subprocess
 
 import pyautogui
 
@@ -17,53 +19,47 @@ class BrowserNavigationAgent:
 
     def _prepare_browser(self):
 
-        # Only open Firefox if it is not already the active application.
-        # For now we use the world state that Ruby maintains.
-
-        from core.world_state import get_state
-
-        state = get_state()
-
-        active_app = state.get(
-            "active_app"
+        print(
+            "[Browser Navigation] "
+            "Opening/focusing Firefox."
         )
 
-        if active_app != "firefox":
+        open_firefox()
 
-            open_firefox()
+        time.sleep(1)
 
-            time.sleep(3)
+        result = subprocess.run(
+            [
+                "wmctrl",
+                "-l",
+                "-x"
+            ],
+            capture_output=True,
+            text=True
+        )
 
-        else:
+        print(
+            "\n========== WINDOWS AFTER FOCUS =========="
+        )
 
-            print(
-                "[Browser Navigation] "
-                "Firefox already active. Reusing it."
-            )
+        print(
+            result.stdout
+        )
 
+        print(
+            "=========================================\n"
+        )
 
+        time.sleep(1)
+        
     def open_google(self):
 
         self._prepare_browser()
 
-        state = get_state()
-
-        current_website = state.get(
-            "current_website"
-        )
-
         print(
-            "[Browser Navigation] Current website:",
-            current_website
+            "[Browser Navigation] "
+            "Navigating to Google."
         )
-
-        if current_website == "google":
-
-            print(
-                "[Browser Navigation] Already on Google. Reusing it."
-            )
-
-            return
 
         pyautogui.hotkey(
             "ctrl",
@@ -81,7 +77,7 @@ class BrowserNavigationAgent:
             "enter"
         )
 
-        time.sleep(2)
+        time.sleep(3)
 
         update_state(
             "active_app",
@@ -93,10 +89,64 @@ class BrowserNavigationAgent:
             "google"
         )
 
-
     def open_youtube(self):
 
         self._prepare_browser()
+
+        print(
+            "[Browser Navigation] "
+            "Checking current Firefox page."
+        )
+
+        result = subprocess.run(
+            [
+                "wmctrl",
+                "-l",
+                "-x"
+            ],
+            capture_output=True,
+            text=True
+        )
+
+        firefox_windows = [
+            line
+            for line in result.stdout.splitlines()
+            if "Navigator.firefox_firefox" in line
+        ]
+
+        if firefox_windows:
+
+            title = firefox_windows[0].lower()
+
+            print(
+                "[Browser Navigation] "
+                "Firefox title:",
+                title
+            )
+
+            if "youtube" in title:
+
+                print(
+                    "[Browser Navigation] "
+                    "Already on YouTube."
+                )
+
+                update_state(
+                    "active_app",
+                    "firefox"
+                )
+
+                update_state(
+                    "current_website",
+                    "youtube"
+                )
+
+                return
+
+        print(
+            "[Browser Navigation] "
+            "Navigating to YouTube."
+        )
 
         pyautogui.hotkey(
             "ctrl",
@@ -114,7 +164,7 @@ class BrowserNavigationAgent:
             "enter"
         )
 
-        time.sleep(2)
+        time.sleep(3)
 
         update_state(
             "active_app",
@@ -126,10 +176,14 @@ class BrowserNavigationAgent:
             "youtube"
         )
 
-
     def open_chatgpt(self):
 
         self._prepare_browser()
+
+        print(
+            "[Browser Navigation] "
+            "Navigating to ChatGPT."
+        )
 
         pyautogui.hotkey(
             "ctrl",
@@ -147,7 +201,7 @@ class BrowserNavigationAgent:
             "enter"
         )
 
-        time.sleep(2)
+        time.sleep(3)
 
         update_state(
             "active_app",

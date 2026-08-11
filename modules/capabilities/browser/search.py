@@ -46,6 +46,11 @@ class BrowserSearchCapability(Capability):
 
         query = step.query
 
+        print(
+            ">>> BROWSER QUERY =",
+            repr(query)
+        )
+
         target = step.target
 
 

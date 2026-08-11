@@ -1,6 +1,6 @@
 {
     "favorite_topic": "robotics",
-    "last_command": "search python on google",
+    "last_command": "search hi on gooogle",
     "command_usage": {
         "open firefox": 9,
         "open github": 13,
@@ -24,7 +24,7 @@
         "currentdirectory": 1,
         ">>> current directory": 2,
         "what is robotics": 7,
-        "hi": 101,
+        "hi": 104,
         "u r too slow": 1,
         "how r u": 11,
         "now u r now ur speed some what decent not too slow": 1,
@@ -284,7 +284,7 @@
         "i only know basic pythobn": 1,
         "search google cats": 5,
         "search google artificial intelligence": 1,
-        "open youtube and search hi": 24,
+        "open youtube and search hi": 31,
         "search hifiey": 1,
         "hifiey": 1,
         "search hifi": 3,
@@ -332,7 +332,7 @@
         "helloexit": 1,
         "search google hi": 1,
         "search hi on google": 3,
-        "search hi on youtube": 5,
+        "search hi on youtube": 10,
         "ask chatgpt hello": 3,
         "ask chatgpt helloask chatgpt helloask chatgpt helloask chatgpt helloask chatgpt helloask chatgpt hello": 1,
         "search ai on youtube": 1,
@@ -350,8 +350,20 @@
         "just open ypoutube and search hifi": 1,
         "just open youtube and search hifi": 2,
         "https://www.google.com": 9,
-        "https://www.youtube.com": 4,
+        "https://www.youtube.com": 13,
         "search ai in google": 1,
-        "exitt": 1
+        "exitt": 1,
+        "search hi in youtube": 3,
+        "searchhi in youtube": 1,
+        "open chatgpt and search hello": 3,
+        "https://chatgpt.com": 1,
+        "open youtube and search hello": 3,
+        "exhttps:/i/www.youtube.comt": 1,
+        "exhttps:i//www.youtube.com": 1,
+        "httpsexit": 1,
+        "search hi on python": 1,
+        "send hello to chatgpt": 2,
+        "send hi to chatgpt": 1,
+        "search hi on gooogle": 1
     }
 }

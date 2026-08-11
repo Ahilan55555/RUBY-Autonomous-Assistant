@@ -72,7 +72,7 @@
         "failure": 1
     },
     "browser": {
-        "success": 15,
-        "failure": 28
+        "success": 31,
+        "failure": 43
     }
 }
