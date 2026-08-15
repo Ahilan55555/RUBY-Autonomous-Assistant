@@ -1,24 +1,21 @@
-# RUBY Autonomous Assistant
+# RUBY — Autonomous AI Assistant
 
-RUBY is an experimental autonomous AI assistant designed to explore the architecture, capabilities, and limitations of modern AI agents.
+RUBY is an autonomous AI assistant designed to interact with computers in a more natural and goal-oriented way.
 
-The project serves as a testing ground for integrating language models with memory systems, tool usage, computer vision, speech processing, and desktop interaction. Rather than focusing on a single capability, RUBY aims to investigate how multiple AI subsystems can operate together within a unified agent framework.
+Unlike traditional assistants that primarily respond to questions or execute individual commands, RUBY is designed to work toward a given objective. It can interpret a goal, determine the actions required, interact with the surrounding computer environment, observe the results, and adapt its execution based on what happens.
 
-## Core Areas of Exploration
+The system combines artificial intelligence with desktop interaction, computer vision, voice communication, memory, and automation to create an assistant capable of operating directly within a computer environment.
 
-* Long-term and short-term memory architectures
-* Context management and retrieval
-* Tool calling and task execution
-* Desktop automation and application control
-* Speech recognition and voice interaction
-* Text-to-speech synthesis
-* OCR and visual perception
-* Autonomous planning and decision-making
-* Local and cloud-based model integration
-* Multi-agent and modular system design
+At its core, RUBY follows an autonomous interaction cycle:
 
-## Project Status
+```text
+Understand → Plan → Act → Observe → Verify → Continue
+```
 
-RUBY is an ongoing experimental platform. Features, architectures, and implementation details may change frequently as new approaches are evaluated and tested.
+This approach allows a task to be treated as an ongoing process rather than a single command. The assistant can use information from the current environment to determine what should happen next and whether previous actions produced the intended result.
 
-The primary objective is to better understand how autonomous AI systems can perceive, reason, remember, plan, and act within real-world computing environments.
+RUBY is intended to move toward a more general form of computer-based AI agent—one that can interact with software and the operating system, work with files and applications, understand visual information, maintain relevant context, and perform multi-step tasks.
+
+The project brings together several areas of computing, including artificial intelligence, natural language processing, computer vision, speech processing, automation, and agent-based systems.
+
+The broader goal of RUBY is to explore how AI systems can move beyond conversation and become capable of **actively operating within a computer environment to accomplish meaningful objectives**.
