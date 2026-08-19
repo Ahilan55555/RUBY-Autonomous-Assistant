@@ -20,14 +20,7 @@ from modules.automation.browser import (
     open_youtube
 )
 
-from core.capability_registry import (
 
-    has_capability
-)
-
-from core.capability_registry import (
-    capabilities
-)
 
 from modules.actions.file_actions import (
     create_file
@@ -96,7 +89,11 @@ from modules.agents.browser_agent import (
     BrowserAgent
 )
 
-from core.capability_registry_v2 import get_capability
+from core.capability_registry_v2 import (
+    has_capability,
+    get_capability,
+    planner_capabilities
+)
 
 from core.pipeline_executor import PipelineExecutor
 
@@ -145,15 +142,7 @@ def execute_intent(task):
         target
     )
 
-    print(
-        "CAPABILITIES ID:",
-        id(capabilities)
-    )
-
-    print(
-        "CAPABILITIES:",
-        capabilities
-    )
+    
 
     print(
         "HAS:",
@@ -793,6 +782,8 @@ def execute_intent(task):
 
                 return result
 
+
+
         # ---------------------------------
         # UNKNOWN INTENT
         # ---------------------------------
@@ -805,6 +796,23 @@ def execute_intent(task):
 
                 "error": f"Unknown intent: {intent}"
             }
+
+            record_execution(
+                task,
+                result
+            )
+
+            record_strategy(
+                intent,
+                False
+            )
+
+            return result
+                # ---------------------------------
+        # CHECK ACTION RESULT
+        # ---------------------------------
+
+        if not result["success"]:
 
             record_execution(
                 task,

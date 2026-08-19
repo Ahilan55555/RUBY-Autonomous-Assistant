@@ -4795,5 +4795,822 @@
                 "reason": "Unknown browser state."
             }
         }
+    },
+    {
+        "timestamp": "2026-08-12 18:02:21.022985",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hi"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-12 18:02:53.037783",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": "hello"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-12 18:04:22.120057",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": "hello"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-12 18:05:04.256622",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "math"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-12 18:05:56.770268",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-12 19:02:33.154490",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": false,
+            "error": "atspi_error: The application no longer exists (0)"
+        }
+    },
+    {
+        "timestamp": "2026-08-12 19:05:55.108727",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-12 19:06:30.107306",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": "hello"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-12 19:16:04.567763",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "\"incognito mode\" firefox"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-13 18:09:27.751057",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-13 18:10:46.381967",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-13 18:11:08.942172",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": "explain neural networks"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-13 18:11:36.399730",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hifi"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-13 18:12:11.946632",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-13 18:12:39.114888",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": "hello"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-16 12:18:12.676543",
+        "task": {
+            "intent": "browser",
+            "target": "open_url",
+            "query": "youtube.com"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: browser -> open_url"
+        }
+    },
+    {
+        "timestamp": "2026-08-16 12:18:25.638601",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Unable to build plan"
+        }
+    },
+    {
+        "timestamp": "2026-08-16 12:18:28.391182",
+        "task": {
+            "intent": "browser",
+            "target": "open_url",
+            "query": "wwpw.youtube.com"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: browser -> open_url"
+        }
+    },
+    {
+        "timestamp": "2026-08-16 12:19:05.668145",
+        "task": {
+            "intent": "browser",
+            "target": "open_url",
+            "query": "youtube.com"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: browser -> open_url"
+        }
+    },
+    {
+        "timestamp": "2026-08-16 12:19:23.781229",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hi"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-16 12:19:43.341897",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "text box"
+        },
+        "result": {
+            "success": false
+        }
+    },
+    {
+        "timestamp": "2026-08-16 12:19:55.593366",
+        "task": {
+            "intent": "screen",
+            "target": "scroll",
+            "query": "down"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> scroll"
+        }
+    },
+    {
+        "timestamp": "2026-08-16 12:46:41.363542",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "dance song"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-16 13:01:04.436124",
+        "task": {
+            "intent": "browser",
+            "target": "search_google",
+            "query": "python"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-16 13:01:34.380882",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "robotics"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-16 13:02:01.998469",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": "what is PID"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-16 13:02:13.026382",
+        "task": {
+            "intent": "screen",
+            "target": "scroll",
+            "query": "down"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> scroll"
+        }
+    },
+    {
+        "timestamp": "2026-08-16 13:02:33.080261",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": false
+        }
+    },
+    {
+        "timestamp": "2026-08-16 13:02:55.750539",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": true,
+            "x": 1256,
+            "y": 264,
+            "source": "accessibility"
+        }
+    },
+    {
+        "timestamp": "2026-08-16 21:42:41.428361",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": "how are you"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-16 21:43:22.696416",
+        "task": {
+            "intent": "browser",
+            "target": "open_url",
+            "query": "youtube.com"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: browser -> open_url"
+        }
+    },
+    {
+        "timestamp": "2026-08-16 21:43:42.569345",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "math"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-17 21:27:05.999490",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Search | hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Could not find 'Search '"
+        }
+    },
+    {
+        "timestamp": "2026-08-17 21:27:28.417598",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "hi"
+        },
+        "result": {
+            "success": false,
+            "error": "Could not find 'hi'"
+        }
+    },
+    {
+        "timestamp": "2026-08-17 21:27:59.925527",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hello"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-17 21:28:20.541908",
+        "task": {
+            "intent": "screen",
+            "target": "scroll",
+            "query": "down"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> scroll"
+        }
+    },
+    {
+        "timestamp": "2026-08-17 21:28:47.466941",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "Search"
+        },
+        "result": {
+            "success": true,
+            "x": 1510,
+            "y": 182,
+            "source": "accessibility",
+            "verified": false
+        }
+    },
+    {
+        "timestamp": "2026-08-17 21:28:52.905128",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Search | hell"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-17 21:29:35.657800",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "Search"
+        },
+        "result": {
+            "success": true,
+            "x": 1510,
+            "y": 182,
+            "source": "accessibility",
+            "verified": false
+        }
+    },
+    {
+        "timestamp": "2026-08-17 21:29:41.192106",
+        "task": {
+            "intent": "screen",
+            "target": "type_at_text",
+            "query": "Search | math"
+        },
+        "result": {
+            "success": true
+        }
+    },
+    {
+        "timestamp": "2026-08-18 19:35:02.484623",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": false,
+            "error": "Capability not supported: screen -> click_text"
+        }
+    },
+    {
+        "timestamp": "2026-08-18 21:04:12.941176",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": true,
+            "x": 1804,
+            "y": 186,
+            "source": "accessibility",
+            "verified": false
+        }
+    },
+    {
+        "timestamp": "2026-08-18 21:12:07.314847",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": true,
+            "x": 1804,
+            "y": 186,
+            "source": "accessibility",
+            "verified": false
+        }
+    },
+    {
+        "timestamp": "2026-08-18 21:23:23.294477",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": true,
+            "x": 1804,
+            "y": 186,
+            "source": "accessibility",
+            "verified": false
+        }
+    },
+    {
+        "timestamp": "2026-08-19 19:26:22.638771",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": false,
+            "error": "Could not find 'New chat'"
+        }
+    },
+    {
+        "timestamp": "2026-08-19 19:27:01.495416",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": true,
+            "method": "accessibility",
+            "text": "New chat",
+            "x": 1374,
+            "y": 843
+        }
+    },
+    {
+        "timestamp": "2026-08-19 19:33:19.032055",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": true,
+            "method": "accessibility",
+            "text": "New chat",
+            "x": 1374,
+            "y": 843
+        }
+    },
+    {
+        "timestamp": "2026-08-19 20:38:25.292737",
+        "task": {
+            "intent": "browser",
+            "target": "open_url",
+            "query": "youtube.com"
+        },
+        "result": {
+            "success": true,
+            "result": {
+                "action": "completed",
+                "reason": "Capability executed successfully."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-19 20:38:40.840630",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hi"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-19 20:39:18.029186",
+        "task": {
+            "intent": "browser",
+            "target": "ask_chatgpt",
+            "query": "hello"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-19 20:39:52.671149",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "Menu"
+        },
+        "result": {
+            "success": false,
+            "error": "Could not find 'Menu'"
+        }
+    },
+    {
+        "timestamp": "2026-08-19 20:40:46.970980",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "new chat"
+        },
+        "result": {
+            "success": true,
+            "method": "accessibility",
+            "text": "new chat",
+            "x": 1376,
+            "y": 843
+        }
     }
 ]

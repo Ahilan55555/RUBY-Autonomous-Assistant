@@ -416,3 +416,142 @@ def find_active_document(
     print("=====================================\n")
 
     return candidates[0][1]["node"]
+
+
+def inspect_point(
+    application,
+    x,
+    y
+):
+
+    print(
+        "\n========== POINT INSPECTION =========="
+    )
+
+    print(
+        f"Requested point: {x}, {y}"
+    )
+
+    try:
+
+        component = application.queryComponent()
+
+        print(
+            "Component:",
+            component
+        )
+
+        node = component.getAccessibleAtPoint(
+            x,
+            y,
+            pyatspi.XY_SCREEN
+        )
+
+        print(
+            "Returned node:",
+            node
+        )
+
+        if node is None:
+
+            print(
+                "[Accessibility] "
+                "No element found."
+            )
+
+            return None
+
+        print(
+            "Name:",
+            repr(node.name)
+        )
+
+        print(
+            "Role:",
+            node.getRoleName()
+        )
+
+        return node
+
+    except Exception as e:
+
+        print(
+            "[Accessibility] "
+            "Point inspection failed."
+        )
+
+        print(
+            "Exception type:",
+            type(e).__name__
+        )
+
+        print(
+            "Exception repr:",
+            repr(e)
+        )
+
+        print(
+            "Exception string:",
+            str(e)
+        )
+
+        return None
+
+    finally:
+
+        print(
+            "=====================================\n"
+        )
+
+def debug_find_text(
+    application,
+    text
+):
+
+    text = text.lower().strip()
+
+    print(
+        "\n========== TEXT DEBUG =========="
+    )
+
+    elements = get_ui_elements(
+        application
+    )
+
+    for index, element in enumerate(elements):
+
+        name = (
+            element["name"]
+            or ""
+        )
+
+        if text not in name.lower():
+            continue
+
+        print(
+            f"\nCandidate {index}"
+        )
+
+        print(
+            "Name:",
+            repr(name)
+        )
+
+        print(
+            "Role:",
+            element["role"]
+        )
+
+        print(
+            "Bounds:",
+            element["bounds"]
+        )
+
+        print(
+            "States:",
+            element["states"]
+        )
+
+    print(
+        "\n================================\n"
+    )

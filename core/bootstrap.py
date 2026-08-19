@@ -14,6 +14,12 @@ from core.capability_registry_v2 import register_capability
 from modules.capabilities.browser.search import (
     BrowserSearchCapability,
 )
+from modules.capabilities.browser.open_url import (
+    BrowserOpenURLCapability,
+)
+from modules.capabilities.screen.actions import (
+    ScreenCapability
+)
 
 loaded_plugins = []
 
@@ -94,6 +100,30 @@ def initialize_runtime():
 
         intent="browser",
 
+        target="open_url",
+
+        capability=BrowserOpenURLCapability(),
+
+        purpose="Open any website URL in the browser.",
+
+        limitations="Requires a valid website URL.",
+
+        examples=[
+
+            "open wikipedia.org",
+
+            "open github.com",
+
+            "open arxiv.org",
+
+            "open https://example.com"
+
+        ]
+    )
+    register_capability(
+
+        intent="browser",
+
         target="search_youtube",
 
         capability=BrowserSearchCapability(),
@@ -132,6 +162,80 @@ def initialize_runtime():
 
         ]
 
+    )
+
+    register_capability(
+
+        intent="screen",
+
+        target="scroll",
+
+        capability=ScreenCapability(),
+
+        purpose="Scroll the current screen up or down.",
+
+        limitations="Requires a visible active application.",
+
+        examples=[
+
+            "scroll down",
+
+            "scroll up",
+
+            "scroll down the page",
+
+            "scroll up the page"
+
+        ]
+
+    )
+    register_capability(
+        intent="screen",
+        target="click_text",
+        capability=ScreenCapability(),
+        purpose="Click visible text identified using screen OCR.",
+        limitations="Requires the requested text to be visible on screen.",
+        examples=[
+            "click the text box",
+            "click Search",
+            "click the Firefox button"
+        ]
+    )
+
+    register_capability(
+        intent="screen",
+        target="double_click_text",
+        capability=ScreenCapability(),
+        purpose="Double-click visible text identified using screen OCR.",
+        limitations="Requires the requested text to be visible on screen.",
+        examples=[
+            "double click the file",
+            "double click Downloads"
+        ]
+    )
+
+    register_capability(
+        intent="screen",
+        target="right_click_text",
+        capability=ScreenCapability(),
+        purpose="Right-click visible text identified using screen OCR.",
+        limitations="Requires the requested text to be visible on screen.",
+        examples=[
+            "right click the folder",
+            "right click Downloads"
+        ]
+    )
+
+    register_capability(
+        intent="screen",
+        target="type_at_text",
+        capability=ScreenCapability(),
+        purpose="Find visible text using OCR, click it, and type text.",
+        limitations="Requires the target text to be visible on screen.",
+        examples=[
+            "type hello into the search box",
+            "type python into the text box"
+        ]
     )
 
     print("Runtime V2 capabilities registered.")

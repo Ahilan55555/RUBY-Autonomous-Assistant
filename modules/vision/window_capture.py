@@ -127,18 +127,97 @@ def capture_window_by_id(
     if not rect["success"]:
         return rect
 
+    print(
+        "[Window Capture] Window ID:",
+        window_id
+    )
+
+    print(
+        "[Window Capture] Rect:",
+        rect
+    )
+
     image = Image.open(
         "temp/fullscreen.png"
     )
 
+    screen_width, screen_height = image.size
+
+    x = rect["x"]
+    y = rect["y"]
+    width = rect["width"]
+    height = rect["height"]
+
+    print(
+        "[Window Capture] Screen:",
+        screen_width,
+        "x",
+        screen_height
+    )
+
+    print(
+        "[Window Capture] Requested:",
+        x,
+        y,
+        width,
+        height
+    )
+
+    if width <= 0 or height <= 0:
+
+        return {
+            "success": False,
+            "error": (
+                "Invalid window dimensions: "
+                f"{width}x{height}"
+            )
+        }
+
+    left = max(
+        0,
+        x
+    )
+
+    top = max(
+        0,
+        y
+    )
+
+    right = min(
+        screen_width,
+        x + width
+    )
+
+    bottom = min(
+        screen_height,
+        y + height
+    )
+
+    if right <= left or bottom <= top:
+
+        return {
+            "success": False,
+            "error": (
+                "Window rectangle is outside "
+                "the captured screen."
+            )
+        }
+
     cropped = image.crop(
         (
-            rect["x"],
-            rect["y"],
-            rect["x"] + rect["width"],
-            rect["y"] + rect["height"]
+            left,
+            top,
+            right,
+            bottom
         )
     )
+
+    if cropped.width <= 0 or cropped.height <= 0:
+
+        return {
+            "success": False,
+            "error": "Window crop is empty."
+        }
 
     cropped.save(
         output
@@ -147,8 +226,8 @@ def capture_window_by_id(
     return {
         "success": True,
         "path": output,
-        "x": rect["x"],
-        "y": rect["y"],
-        "width": rect["width"],
-        "height": rect["height"]
+        "x": left,
+        "y": top,
+        "width": cropped.width,
+        "height": cropped.height
     }

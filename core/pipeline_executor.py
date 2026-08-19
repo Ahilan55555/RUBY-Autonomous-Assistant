@@ -55,28 +55,69 @@ class PipelineExecutor:
         )
 
         if plan is None:
+
             return {
                 "success": False,
                 "error": "Unable to build plan"
             }
 
+        # ---------------------------------
+        # EXECUTE PLAN
+        # ---------------------------------
+
         for task in plan.tasks:
 
-            execution = self.executor.execute_queue(
-                task.action_queue
-            )
+            if task.capability is not None:
+
+                execution = capability.execute(
+                    task,
+                    mission
+                )
+
+            elif task.action_queue is not None:
+
+                execution = self.executor.execute_queue(
+                    task.action_queue
+                )
+
+            else:
+
+                execution = {
+                    "success": False,
+                    "error": (
+                        f"Task '{task.name}' has "
+                        "no capability or action queue."
+                    )
+                }
 
             if isinstance(execution, dict):
-                if not execution.get("success", False):
-                    capability.cleanup(mission)
+
+                if not execution.get(
+                    "success",
+                    False
+                ):
+
+                    capability.cleanup(
+                        mission
+                    )
+
                     return execution
 
             elif execution is False:
-                capability.cleanup(mission)
+
+                capability.cleanup(
+                    mission
+                )
+
                 return {
                     "success": False,
                     "error": f"Task '{task.name}' failed."
                 }
+
+
+        # ---------------------------------
+        # OBSERVE
+        # ---------------------------------
 
         observation = capability.observe()
 
@@ -89,10 +130,35 @@ class PipelineExecutor:
             mission
         )
 
+
+        # ---------------------------------
+        # ACTION-ONLY CAPABILITY
+        # ---------------------------------
+
+        if decision is None:
+
+            capability.cleanup(
+                mission
+            )
+
+            return {
+                "success": True,
+                "result": {
+                    "action": "completed",
+                    "reason": "Capability executed successfully."
+                }
+            }
+
+
+        # ---------------------------------
+        # DECISION-BASED CAPABILITY
+        # ---------------------------------
+
         result = capability.apply_result(
             mission,
             decision
         )
+
         decision_data = {
 
             "action": decision.action,

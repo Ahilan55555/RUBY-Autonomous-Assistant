@@ -41,11 +41,14 @@ class ExecutionAgent:
 
         if validate_intent(resolved_task):
 
-            success = execute_intent(
+            result = execute_intent(
                 resolved_task
             )
 
-            if success:
+            if (
+                isinstance(result, dict)
+                and result.get("success", False)
+            ):
 
                 complete_goal(task)
 
@@ -92,9 +95,20 @@ class ExecutionAgent:
                     )
                 )
 
-                execute_intent(recovered_task)
+                recovery_result = execute_intent(
+                    recovered_task
+                )
 
-                complete_goal(task)
+                if (
+                    isinstance(recovery_result, dict)
+                    and recovery_result.get("success", False)
+                ):
+
+                    complete_goal(task)
+
+                else:
+
+                    fail_goal(task)
 
             else:
 

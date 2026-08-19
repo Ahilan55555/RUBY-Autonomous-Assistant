@@ -6,6 +6,7 @@ from modules.agents.verification_agent import (
     VerificationAgent
 )
 
+from modules.automation.mouse_controller import scroll
 
 class Executor:
 
@@ -32,17 +33,9 @@ class Executor:
             if not result["success"]:
                 return result
 
-            if not self.verifier.verify_exists(
-                action.target
-            ):
-
-                return {
-                    "success": False,
-                    "error": "Verification failed"
-                }
-
             return {
-                "success": True
+                "success": True,
+                "action": "click_executed"
             }
 
 
@@ -97,6 +90,12 @@ class Executor:
 
             return self.ui.wait(
                 action.seconds
+            )
+
+        elif action.action == "scroll":
+
+            return scroll(
+                action.amount
             )
 
 

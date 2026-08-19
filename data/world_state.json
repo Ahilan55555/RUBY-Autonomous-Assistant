@@ -1,27 +1,23 @@
 {
     "active_app": "firefox",
     "active_window": null,
-    "current_website": "google",
+    "current_website": "chatgpt",
     "current_url": null,
     "current_page": null,
     "working_directory": null,
     "last_goal": null,
     "last_task": {
-        "intent": "browser",
-        "target": "search_google",
-        "query": "hi"
+        "intent": "screen",
+        "target": "click_text",
+        "query": "new chat"
     },
     "last_action": null,
     "last_result": {
         "success": true,
-        "decision": {
-            "action": "continue",
-            "reason": "Unknown browser state."
-        },
-        "result": {
-            "action": "continue",
-            "reason": "Unknown browser state."
-        }
+        "method": "accessibility",
+        "text": "new chat",
+        "x": 1376,
+        "y": 843
     },
     "last_search": null,
     "screen_context": null

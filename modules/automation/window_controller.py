@@ -42,6 +42,74 @@ def get_active_window():
         "title": result.stdout.strip()
     }
 
+def get_application_window_id(
+    application
+):
+
+    result = subprocess.run(
+        [
+            "xdotool",
+            "search",
+            "--onlyvisible",
+            "--class",
+            application
+        ],
+        capture_output=True,
+        text=True
+    )
+
+    windows = [
+        line.strip()
+        for line in result.stdout.splitlines()
+        if line.strip()
+    ]
+
+    valid_windows = []
+
+    for window_id in windows:
+
+        geometry = get_window_rect_by_id(
+            window_id
+        )
+
+        if not geometry.get(
+            "success",
+            False
+        ):
+            continue
+
+        width = geometry.get(
+            "width",
+            0
+        )
+
+        height = geometry.get(
+            "height",
+            0
+        )
+
+        if width <= 1 or height <= 1:
+            continue
+
+        valid_windows.append(
+            window_id
+        )
+
+    if not valid_windows:
+
+        return {
+            "success": False,
+            "error": (
+                f"No usable visible "
+                f"{application} window found"
+            )
+        }
+
+    return {
+        "success": True,
+        "window_id": valid_windows[-1]
+    }
+
 def focus_window(title):
 
     subprocess.run(

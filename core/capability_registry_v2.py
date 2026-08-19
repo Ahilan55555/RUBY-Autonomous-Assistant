@@ -190,3 +190,32 @@ def capability_summary():
     lines.append("=" * 40)
 
     return "\n".join(lines)
+
+def planner_capabilities():
+
+    result = []
+
+    for intent, targets in capabilities.items():
+
+        for target, data in targets.items():
+
+            # Do not expose legacy/global capabilities
+            # with no explicit target to the LLM planner.
+            if target is None:
+                continue
+
+            result.append({
+
+                "intent": intent,
+
+                "target": target,
+
+                "purpose": data["purpose"],
+
+                "limitations": data["limitations"],
+
+                "examples": data["examples"]
+
+            })
+
+    return result

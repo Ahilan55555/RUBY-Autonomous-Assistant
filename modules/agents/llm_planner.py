@@ -13,12 +13,11 @@ from core.schemas.plan_schema import (
     Plan
 )
 
-from core.capability_registry import (
-    show_capabilities as show_capabilities_v1
-)
+
 
 from core.capability_registry_v2 import (
-    capability_summary
+    planner_capabilities,
+    has_capability
 )
 
 from modules.agents.context_agent import (
@@ -27,6 +26,32 @@ from modules.agents.context_agent import (
 
 
 class LLMPlanner:
+    def _parse_json(
+        self,
+        response
+    ):
+
+        response = response.strip()
+
+        if response.startswith("```"):
+
+            lines = response.splitlines()
+
+            if lines:
+
+                lines = lines[1:]
+
+            if lines and lines[-1].strip() == "```":
+
+                lines = lines[:-1]
+
+            response = "\n".join(
+                lines
+            ).strip()
+
+        return json.loads(
+            response
+        )
 
     def plan(
         self,
@@ -47,9 +72,7 @@ class LLMPlanner:
                 .planner_context()
             )
 
-        runtime_capabilities = capability_summary()
-
-        legacy_capabilities = show_capabilities_v1()
+        runtime_capabilities = planner_capabilities()
 
         # ---------------------------------
         # Planner Prompt
@@ -79,262 +102,233 @@ RUNTIME V2 CAPABILITIES
 {runtime_capabilities}
 
 ========================================
-LEGACY CAPABILITIES
-========================================
-
-{legacy_capabilities}
-
-========================================
 PLANNING RULES
 ========================================
 
-1. ONLY use capabilities listed above.
+1. You are selecting from Ruby's available runtime capabilities.
 
-2. NEVER invent intents.
+2. ONLY use an exact intent and target combination present
+   in RUNTIME CAPABILITIES.
 
-3. NEVER invent targets.
+3. NEVER invent an intent.
 
-4. NEVER invent capabilities.
+4. NEVER invent a target.
 
-5. NEVER invent UI elements.
+5. NEVER invent a capability.
 
-6. NEVER assume an application.
+6. Choose the capability whose purpose and examples best
+   match the user's request.
 
-7. NEVER assume a browser.
+7. Prefer an existing capability over manually constructing
+   low-level actions.
 
-8. NEVER assume a website.
+8. Prefer the smallest plan that completely satisfies the goal.
 
-9. If the user says "search",
-   do NOT automatically choose Google,
-   YouTube or ChatGPT.
+9. A task may use multiple capabilities when the user's goal
+   genuinely requires multiple steps.
 
-10. If multiple interpretations are possible,
-    prefer asking for clarification.
+10. Do not add unnecessary steps.
 
-11. Never generate tasks Ruby cannot execute.
+11. Do not assume an application unless the user's request
+    or current context establishes it.
 
-12. Every task must correspond to an available capability.
+12. Do not assume a website unless the user specifies it
+    or the capability itself requires one.
 
-13. Do not create placeholder tasks.
+13. Preserve explicit user constraints.
 
-14. Prefer the smallest correct plan.
+14. If the user explicitly names a destination, application,
+    website, or tool, respect that choice.
 
-15. Think step-by-step before planning.
+15. If the request is ambiguous and different capabilities
+    would produce meaningfully different results, ask for
+    clarification.
 
-16. If the request is impossible,
-    return a clarification instead of inventing actions.
+16. If no available capability can perform the request,
+    return a clarification explaining that the capability
+    is unavailable.
 
-17. If a capability is unavailable,
-    do not replace it with another capability.
+17. Every generated task MUST correspond to an available
+    runtime capability.
 
-18. Return ONLY valid JSON.
+18. Do not create placeholder tasks.
 
-19. Browser capabilities already perform all required browser navigation.
+19. Do not generate capabilities that are not listed.
 
-20. NEVER generate an "open_website" task for a browser search.
+20. Return ONLY valid JSON.
 
-21. If the user asks to open YouTube and search something, output ONLY:
-    intent = browser
-    target = search_youtube
-    query = the search text
+========================================
+CAPABILITY SELECTION GUIDANCE
+========================================
 
-22. If the user asks to open Google and search something, output ONLY:
-    intent = browser
-    target = search_google
-    query = the search text
+Use the capability purpose and examples as the primary
+source for deciding which capability to select.
 
-23. If the user asks to open ChatGPT and send a message, output ONLY:
-    intent = browser
-    target = ask_chatgpt
-    query = the message
+Examples:
 
-24. Browser search capabilities perform navigation themselves.
-    Therefore a browser search NEVER needs an additional
-    open_website task.
+"scroll down"
+→ screen / scroll
 
-25. For every browser search request, generate EXACTLY ONE task.
+"scroll up the page"
+→ screen / scroll
 
-26. NEVER generate both:
-    open_website + browser
+"click the text box"
+→ screen / click_text
 
-27. NEVER generate open_website when target is:
-    search_google
-    search_youtube
-    ask_chatgpt
+"double click the file"
+→ screen / double_click_text
 
-IMPORTANT:
+"right click the folder"
+→ screen / right_click_text
 
-For browser requests, the words "open", "go to", or "navigate to"
-do NOT mean that an open_website task should be created.
+"open wikipedia.org"
+→ browser / open_url
 
-The browser capability itself handles opening and navigating to the website.
+"search python on google"
+→ browser / search_google
 
-Therefore:
+"search robotics on youtube"
+→ browser / search_youtube
 
-"open youtube and search hifi"
+"ask ChatGPT what is PID"
+→ browser / ask_chatgpt
 
-MUST become exactly:
+"run pwd in the terminal"
+→ terminal / [available target]
+
+"close Firefox"
+→ window / close
+
+"maximize Firefox"
+→ window / maximize
+
+The examples above illustrate capability selection.
+They do NOT authorize capabilities that are absent
+from RUNTIME CAPABILITIES.
+
+========================================
+TASK PARAMETERS
+========================================
+
+The "query" field contains the user-provided information
+required by the selected capability.
+
+Do not unnecessarily modify the user's query.
+
+========================================
+SCREEN CAPABILITY PARAMETERS
+========================================
+
+For screen/click_text:
+
+The query MUST contain the exact visible text
+that Ruby should locate using OCR.
+
+If the user explicitly names visible text,
+extract that text into query.
+
+Example:
+
+User:
+click Search
+
+Correct:
+
+{{
+    "intent": "screen",
+    "target": "click_text",
+    "query": "Search"
+}}
+
+User:
+click the "Submit" button
+
+Correct:
+
+{{
+    "intent": "screen",
+    "target": "click_text",
+    "query": "Submit"
+}}
+
+Do NOT leave query empty.
+
+If the user describes a UI element semantically
+rather than naming visible text, such as:
+
+"click the text box"
+"click the search field"
+"click the login button"
+
+do NOT invent the text displayed by that element.
+
+Return a clarification instead if no exact visible
+text is provided.
+
+For screen/double_click_text:
+
+query MUST contain the visible text to locate.
+
+For screen/right_click_text:
+
+query MUST contain the visible text to locate.
+
+For screen/type_at_text:
+
+query MUST contain both:
+1. the visible text identifying the target
+2. the text to type
+
+Use this format:
+
+"visible target | text to type"
+
+Example:
+
+User:
+type robotics into Search
+
+Correct:
+
+{{
+    "intent": "screen",
+    "target": "type_at_text",
+    "query": "Search | robotics"
+}}
+
+For example:
+
+User:
+search robotics on youtube
+
+Correct:
 
 {{
     "intent": "browser",
     "target": "search_youtube",
-    "query": "hifi"
+    "query": "robotics"
 }}
 
-There must be NO "open_website" task.
+User:
+open wikipedia.org
 
-"open google and search python"
-
-MUST become exactly:
+Correct:
 
 {{
     "intent": "browser",
-    "target": "search_google",
-    "query": "python"
-}}
-
-There must be NO "open_website" task.
-
-"open chatgpt and say hello"
-
-MUST become exactly:
-
-{{
-    "intent": "browser",
-    "target": "ask_chatgpt",
-    "query": "hello"
-}}
-
-There must be NO "open_website" task.
-
-Only Use
-
-intent = browser
-
-with one of these targets:
-
-- search_google
-- search_youtube
-- ask_chatgpt
-
-Examples:
-User:
-search music on youtube
-
-Output:
-
-{{
-"goal":"search music on youtube",
-"tasks":[
-{{
-"intent":"browser",
-"target":"search_youtube",
-"query":"music"
-}}
-]
+    "target": "open_url",
+    "query": "wikipedia.org"
 }}
 
 User:
-ask chatgpt hello
+scroll down
 
-Output:
-
-{{
-"goal":"ask chatgpt hello",
-"tasks":[
-{{
-"intent":"browser",
-"target":"ask_chatgpt",
-"query":"hello"
-}}
-]
-}}
-
-========================================
-OUTPUT FORMAT
-========================================
+Correct:
 
 {{
-    "goal": "...",
-    "tasks": [
-        {{
-            "intent": "...",
-            "target": "...",
-            "query": "..."
-        }}
-    ]
-}}
-
-Every browser search MUST include the search text inside "query".
-
-
-Example:
-
-{{
-"intent":"browser",
-"target":"search_google",
-"query":"python"
-}}
-
-Never leave query empty for browser search capabilities.
-
-If clarification is required, return
-
-{{
-"status": "clarification",
-"question": "...",
-"options": [
-"...",
-"..."
-]
-}}
-
-User:
-just open youtube and search hifi
-
-Output:
-
-{{
-"goal":"just open youtube and search hifi",
-"tasks":[
-{{
-"intent":"browser",
-"target":"search_youtube",
-"query":"hifi"
-}}
-]
-}}
-
-User:
-open google and search python
-
-Output:
-
-{{
-"goal":"open google and search python",
-"tasks":[
-{{
-"intent":"browser",
-"target":"search_google",
-"query":"python"
-}}
-]
-}}
-
-User:
-open chatgpt and say hello
-
-Output:
-
-{{
-"goal":"open chatgpt and say hello",
-"tasks":[
-{{
-"intent":"browser",
-"target":"ask_chatgpt",
-"query":"hello"
-}}
-]
+    "intent": "screen",
+    "target": "scroll",
+    "query": "down"
 }}
 """
 
@@ -350,10 +344,7 @@ Output:
         print(runtime_capabilities)
         print("=============================================\n")
 
-        print("\n========== LEGACY CAPABILITIES ==========")
-        print(legacy_capabilities)
-        print("=========================================\n")
-
+            
         print("\n========== PLANNER PROMPT ==========")
         print(prompt)
         print("====================================\n")
@@ -379,18 +370,48 @@ Output:
         # Parse JSON
         # ---------------------------------
 
-        data = json.loads(
-            response
-        )
+        try:
+
+            data = self._parse_json(
+                response
+            )
+
+        except json.JSONDecodeError as error:
+
+            print(
+                "[Planner] Invalid JSON:",
+                error
+            )
+
+            return None
+
+        # ---------------------------------
+        # Clarification
+        # ---------------------------------
+
+        if data.get("status") == "clarification":
+
+            return data
+
+        # ---------------------------------
+        # Normalize Single Task
+        # ---------------------------------
 
         if "intent" in data:
 
             data = {
+
                 "goal": goal,
+
                 "tasks": [
                     data
                 ]
+
             }
+
+        # ---------------------------------
+        # Validate and Build Tasks
+        # ---------------------------------
 
         tasks = []
 
@@ -399,28 +420,121 @@ Output:
             []
         ):
 
+            intent = item.get(
+                "intent",
+                ""
+            )
+
+            target = item.get(
+                "target",
+                ""
+            )
+
+            query = item.get(
+                "query",
+                ""
+            )
+
+            # ---------------------------------
+            # Validate Task
+            # ---------------------------------
+
+            if not intent or not target:
+
+                print(
+                    "[Planner] Invalid task:",
+                    item
+                )
+
+                return None
+
+
+            # ---------------------------------
+            # Validate Required Query
+            # ---------------------------------
+
+            query_required = {
+                "screen": {
+                    "scroll",
+                    "click_text",
+                    "double_click_text",
+                    "right_click_text",
+                    "type_at_text"
+                },
+
+                "browser": {
+                    "open_url",
+                    "search_google",
+                    "search_youtube",
+                    "ask_chatgpt"
+                }
+            }
+
+
+            if (
+                intent in query_required
+                and target in query_required[intent]
+                and not query.strip()
+            ):
+
+                print(
+                    "[Planner] Missing query:",
+                    item
+                )
+
+                return None
+
+            # ---------------------------------
+            # Validate Capability
+            # ---------------------------------
+
+            if not has_capability(
+                intent,
+                target
+            ):
+
+                print(
+                    "[Planner] Unknown capability:",
+                    intent,
+                    target
+                )
+
+                return None
+
             tasks.append(
 
                 Task(
 
-                    intent=item.get(
-                        "intent",
-                        ""
-                    ),
+                    intent=intent,
 
-                    target=item.get(
-                        "target",
-                        ""
-                    ),
+                    target=target,
 
-                    query=item.get(
-                        "query",
-                        ""
-                    )
+                    query=query
 
                 )
 
             )
+
+        # ---------------------------------
+        # Reject Empty Plans
+        # ---------------------------------
+
+        if not tasks:
+
+            print(
+                "[Planner] Empty plan."
+            )
+
+            return Plan(
+                goal=data.get(
+                    "goal",
+                    goal
+                ),
+                tasks=[]
+            )
+        # ---------------------------------
+        # Build Plan
+        # ---------------------------------
 
         return Plan(
 

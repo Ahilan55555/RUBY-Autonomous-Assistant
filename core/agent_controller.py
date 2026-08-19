@@ -40,6 +40,7 @@ class AgentController:
 
         command
     ):
+        
         chat_starters = [
 
             "hello",
@@ -73,31 +74,13 @@ class AgentController:
         plan = self.planner.recover(
             command
         )
-        supported_intents = [
+        # Runtime V2 capabilities are validated
+        # by the capability registry / executor.
+        #
+        # Do not maintain a second hard-coded
+        # supported-intents list here.
 
-            "open_app",
-
-            "open_website",
-
-            "python",
-
-            "terminal",
-
-            "file",
-
-            "project",
-
-            "google_search"
-        ]
-
-        plan.tasks = [
-
-            task
-
-            for task in plan.tasks
-
-            if task.intent in supported_intents
-        ]
+        plan.tasks = plan.tasks
 
         if not plan.tasks:
 
@@ -129,10 +112,7 @@ class AgentController:
 
             return
 
-        response = (
-            self.response_agent
-            .respond(result)
-        )
+        
 
         for task in plan.tasks:
 
@@ -141,7 +121,7 @@ class AgentController:
             )
 
             response = (
-                response_agent
+                self.response_agent
                 .respond(result)
             )
 

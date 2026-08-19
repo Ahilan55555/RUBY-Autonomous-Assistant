@@ -3,8 +3,8 @@ from modules.automation.mouse_controller import (
     move_mouse,
     left_click,
     right_click,
-    double_click
-    
+    double_click,
+    scroll
 )
 
 from modules.automation.keyboard_controller import (
@@ -185,6 +185,19 @@ class UIAgent:
 
         press_key(
             key
+        )
+
+        return {
+            "success": True
+        }
+
+    def scroll(
+        self,
+        amount
+    ):
+
+        scroll(
+            amount
         )
 
         return {

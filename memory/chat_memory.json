@@ -1,14 +1,16 @@
 {
     "messages": [
-        "User: can u open youtube and search hifi",
-        "Assistant: Sure! Let's search for \"hifi\" on YouTube. What specific type of HIFI content are you looking for?",
-        "User: just open ypoutube and search hifi",
-        "Assistant: Sure! I'll open YouTube and search for \"hifi.\" What kind of HIFI videos or channels are you interested in?",
+        "Assistant: I'm doing well, thanks! How about you?",
+        "User: not well",
+        "Assistant: I'm sorry to hear that. Is there anything specific you'd like to talk about or any help you need?",
+        "User: how r u",
+        "Assistant: I'm doing well, thanks! How are you feeling now?",
         "Assistant: Hello! How can I assist you today?",
         "Assistant: Hello! How can I assist you today?",
-        "Assistant: Hello! How can I help you today?",
-        "Assistant: Hello! How can I assist you today?",
-        "User: httpsexit",
-        "Assistant: I'm not sure what you meant by that. Could you please clarify or provide more details?"
+        "User: how r u",
+        "Assistant: I'm doing well, thanks! How are you feeling now?",
+        "Assistant: Hi there! How can I help you today?",
+        "User: how r u",
+        "Assistant: I'm doing well, thanks! How about you?"
     ]
 }
