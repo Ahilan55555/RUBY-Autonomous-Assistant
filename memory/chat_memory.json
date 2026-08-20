@@ -11,6 +11,12 @@
         "Assistant: I'm doing well, thanks! How are you feeling now?",
         "Assistant: Hi there! How can I help you today?",
         "User: how r u",
-        "Assistant: I'm doing well, thanks! How about you?"
+        "Assistant: I'm doing well, thanks! How about you?",
+        "User: open youtube",
+        "Assistant: Sure, I can guide you on how to open YouTube. On most devices, you can search for 'YouTube' in your app store or find it on your home screen if it's installed. Would you like some more specific steps for your device?",
+        "User: click New chat",
+        "Assistant: Sure, let's start a new conversation! What would you like to talk about?",
+        "User: click New chat",
+        "Assistant: Sure, let's start a new conversation! What would you like to discuss today?"
     ]
 }

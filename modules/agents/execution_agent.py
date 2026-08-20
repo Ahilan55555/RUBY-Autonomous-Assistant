@@ -45,27 +45,21 @@ class ExecutionAgent:
                 resolved_task
             )
 
-            if (
-                isinstance(result, dict)
-                and result.get("success", False)
-            ):
+            if result.get("success", False):
 
                 complete_goal(task)
 
                 record_success(
-
                     str(task),
-
                     [resolved_task]
                 )
+
             else:
 
                 fail_goal(task)
 
                 record_failure(
-
                     str(task),
-
                     [resolved_task]
                 )
 
@@ -82,15 +76,12 @@ class ExecutionAgent:
             if recovered_task:
 
                 print(
-
                     "[Execution Agent] Recovery successful."
                 )
+
                 asyncio.create_task(
-
                     emit(
-
                         "recovery",
-
                         recovered_task
                     )
                 )
@@ -106,14 +97,16 @@ class ExecutionAgent:
 
                     complete_goal(task)
 
+                    record_success(
+                        str(task),
+                        [recovered_task]
+                    )
+
                 else:
 
                     fail_goal(task)
 
-            else:
-
-                print(
-
-                    "[Execution Agent] Recovery failed."
-                )
-                fail_goal(task)
+                    record_failure(
+                        str(task),
+                        [recovered_task]
+                    )

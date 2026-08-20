@@ -80,7 +80,7 @@ class AgentController:
         # Do not maintain a second hard-coded
         # supported-intents list here.
 
-        plan.tasks = plan.tasks
+        
 
         if not plan.tasks:
 
@@ -117,7 +117,7 @@ class AgentController:
         for task in plan.tasks:
 
             result = execute_intent(
-                task.__dict__
+                task
             )
 
             response = (
@@ -133,8 +133,4 @@ class AgentController:
                 response
             )
 
-            threading.Thread(
-                target=speak,
-                args=(response,),
-                daemon=True
-            ).start()
+            speak(response)

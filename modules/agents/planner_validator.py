@@ -9,6 +9,13 @@ class PlannerValidator:
         self,
         plan
     ):
+        if plan is None:
+
+            return {
+                "valid": False,
+                "reason": "Planner returned no plan."
+            }
+
 
         for task in plan.tasks:
 

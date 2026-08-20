@@ -273,12 +273,28 @@ async def handle_command(command):
         plan = planner.recover(
             command
         )
+
+        if not plan:
+
+            print(
+                "\nAssistant:"
+            )
+
+            print(
+                "I could not create a valid plan."
+            )
+
+            return
+
         print(
             f"[PLAN TASKS] {len(plan.tasks)}"
         )
+
         if plan.goal == "unsupported":
 
-            print("\nAssistant:\n")
+            print(
+                "\nAssistant:\n"
+            )
 
             print(
                 "I don't currently support that action."
@@ -321,17 +337,7 @@ async def handle_command(command):
             ResponseAgent()
         )
 
-        if not plan:
-
-            print(
-                "\nAssistant:"
-            )
-
-            print(
-                "I could not create a plan."
-            )
-
-            return
+        
 
         for step in plan.tasks:
 

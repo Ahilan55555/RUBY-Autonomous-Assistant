@@ -48,7 +48,7 @@
         "failure": 9
     },
     "screen": {
-        "success": 53,
+        "success": 55,
         "failure": 18
     },
     "keyboard": {
@@ -72,7 +72,7 @@
         "failure": 1
     },
     "browser": {
-        "success": 56,
-        "failure": 49
+        "success": 60,
+        "failure": 51
     }
 }

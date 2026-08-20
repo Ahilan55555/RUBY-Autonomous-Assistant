@@ -306,31 +306,41 @@ class AdaptivePlanner:
 
             print()
 
-            print("========== PLANNER VALIDATION FAILED ==========")
+            print(
+                "========== PLANNER VALIDATION FAILED =========="
+            )
 
             print(
                 "Intent:",
-                validation["intent"]
+                validation.get(
+                    "intent",
+                    "unknown"
+                )
             )
 
             print(
                 "Target:",
-                validation["target"]
+                validation.get(
+                    "target",
+                    "unknown"
+                )
             )
 
             print(
                 "Reason:",
-                validation["reason"]
+                validation.get(
+                    "reason",
+                    "Unknown validation failure."
+                )
             )
 
-            print("==============================================")
+            print(
+                "=============================================="
+            )
 
             return Plan(
-
                 goal=goal,
-
                 tasks=[]
-
             )
 
 

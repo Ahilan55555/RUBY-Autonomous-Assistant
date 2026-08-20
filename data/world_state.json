@@ -1,23 +1,27 @@
 {
     "active_app": "firefox",
     "active_window": null,
-    "current_website": "chatgpt",
+    "current_website": "youtube",
     "current_url": null,
     "current_page": null,
     "working_directory": null,
     "last_goal": null,
     "last_task": {
-        "intent": "screen",
-        "target": "click_text",
-        "query": "new chat"
+        "intent": "browser",
+        "target": "search_youtube",
+        "query": "hello"
     },
     "last_action": null,
     "last_result": {
         "success": true,
-        "method": "accessibility",
-        "text": "new chat",
-        "x": 1376,
-        "y": 843
+        "decision": {
+            "action": "continue",
+            "reason": "Unknown browser state."
+        },
+        "result": {
+            "action": "continue",
+            "reason": "Unknown browser state."
+        }
     },
     "last_search": null,
     "screen_context": null

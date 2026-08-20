@@ -1,6 +1,6 @@
 {
     "favorite_topic": "robotics",
-    "last_command": "clicck on the new chat",
+    "last_command": "search hello in the text box odf youtube",
     "command_usage": {
         "open firefox": 9,
         "open github": 13,
@@ -14,7 +14,7 @@
         "cotton": 1,
         "cotton that and": 1,
         "no people": 1,
-        "open youtube": 18,
+        "open youtube": 19,
         "show files": 6,
         "current directory": 5,
         "search robotics research papers": 2,
@@ -383,7 +383,7 @@
         "i am listning to one dance song": 1,
         "ask chatgpt what is PID": 1,
         "scroll down": 2,
-        "click New chat": 2,
+        "click New chat": 4,
         "open new chat": 1,
         "search hi in the current page": 2,
         "search hello in youtube": 1,
@@ -393,6 +393,7 @@
         "open chat gpt and say hello to it": 1,
         "open the menue bar in the screen": 1,
         "click on the slide bar of chatgpt on the screen": 1,
-        "clicck on the new chat": 1
+        "clicck on the new chat": 1,
+        "search hello in the text box odf youtube": 1
     }
 }

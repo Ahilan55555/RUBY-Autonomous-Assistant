@@ -5612,5 +5612,123 @@
             "x": 1376,
             "y": 843
         }
+    },
+    {
+        "timestamp": "2026-08-19 20:57:53.146673",
+        "task": {
+            "intent": "browser",
+            "target": "open_url",
+            "query": "youtube.com"
+        },
+        "result": {
+            "success": false,
+            "error": "'dict' object has no attribute 'query'"
+        }
+    },
+    {
+        "timestamp": "2026-08-19 20:58:19.101870",
+        "task": {
+            "intent": "browser",
+            "target": "open_url",
+            "query": "youtube.com"
+        },
+        "result": {
+            "success": false,
+            "error": "'dict' object has no attribute 'query'"
+        }
+    },
+    {
+        "timestamp": "2026-08-19 21:09:32.279510",
+        "task": {
+            "intent": "browser",
+            "target": "open_url",
+            "query": "youtube.com"
+        },
+        "result": {
+            "success": true,
+            "result": {
+                "action": "completed",
+                "reason": "Capability executed successfully."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-19 21:11:27.319458",
+        "task": {
+            "intent": "browser",
+            "target": "open_url",
+            "query": "youtube.com"
+        },
+        "result": {
+            "success": true,
+            "result": {
+                "action": "completed",
+                "reason": "Capability executed successfully."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-19 21:17:01.491077",
+        "task": {
+            "intent": "browser",
+            "target": "open_url",
+            "query": "youtube.com"
+        },
+        "result": {
+            "success": true,
+            "result": {
+                "action": "completed",
+                "reason": "Capability executed successfully."
+            }
+        }
+    },
+    {
+        "timestamp": "2026-08-20 14:31:49.877087",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": true,
+            "method": "accessibility",
+            "text": "New chat",
+            "x": 1816,
+            "y": 186
+        }
+    },
+    {
+        "timestamp": "2026-08-20 14:32:51.901822",
+        "task": {
+            "intent": "screen",
+            "target": "click_text",
+            "query": "New chat"
+        },
+        "result": {
+            "success": true,
+            "method": "accessibility",
+            "text": "New chat",
+            "x": 1816,
+            "y": 186
+        }
+    },
+    {
+        "timestamp": "2026-08-20 14:33:54.637761",
+        "task": {
+            "intent": "browser",
+            "target": "search_youtube",
+            "query": "hello"
+        },
+        "result": {
+            "success": true,
+            "decision": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            },
+            "result": {
+                "action": "continue",
+                "reason": "Unknown browser state."
+            }
+        }
     }
 ]
